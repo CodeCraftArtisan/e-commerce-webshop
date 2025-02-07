@@ -1,0 +1,137 @@
+<section class="py-8 px-4 mx-auto max-w-screen-xl lg:py-10" *ngIf="product">
+  <div class="flex flex-col lg:flex-row gap-8">
+    <!-- Product Slideshow Gallery -->
+    <div class="flex-1 max-w-lg mx-auto lg:mx-0">
+      <!-- Main Product Image -->
+      <div
+        class="relative bg-itemsBg rounded-md overflow-hidden"
+        style="width: 100%; max-width: 500px; height: 500px; margin: 0 auto"
+      >
+        <img
+          class="object-contain w-full h-full"
+          [src]="product.imageUrls[currentImageIndex]"
+          [alt]="'Image of ' + product.name"
+        />
+      </div>
+
+      <!-- Thumbnail Navigation -->
+      <div class="flex justify-start gap-2 mt-4 overflow-x-auto">
+        <button
+          *ngFor="let image of product?.imageUrls; let i = index"
+          (click)="currentImageIndex = i"
+          class="flex-shrink-0 border rounded-md p-1 transition duration-200"
+          [class.border-blue-500]="i === currentImageIndex"
+          [class.bg-blue-100]="i === currentImageIndex"
+        >
+          <img
+            class="object-cover w-16 h-16 rounded-md"
+            [src]="image"
+            [alt]="'Thumbnail ' + (i + 1) + ' of ' + product.name"
+          />
+        </button>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="flex-1 lg:pl-6">
+      <h2 class="text-primary text-4xl font-semibold mb-2">
+        {{ product.name }}
+      </h2>
+      <!-- Rating section -->
+      <div class="flex mb-4 items-center gap-2">
+        <app-rating
+          [maxStars]="5"
+          [currentRating]="product.rating ?? 0"
+          (ratingChange)="onRatingChange($event)"
+          [readOnly]="false"
+        ></app-rating>
+        <p class="text-secondary text-xs">
+          {{ product.rating || "No ratings yet" }}
+        </p>
+      </div>
+      <!--End Rating section -->
+      <p class="text-xl font-normal text-secondary mb-4">
+        {{ product.description }}
+      </p>
+      <p class="text-base text-primary mb-2">
+        Prix: <span>{{ product.price }}€</span>
+      </p>
+      <app-quantity-selector
+        [quantity]="initialQuantity"
+        [min]="1"
+        [max]="50"
+        (quantityChange)="onQuantityChange($event)"
+      ></app-quantity-selector>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-4">
+        <button
+          (click)="addToCart()"
+          type="button"
+          class="focus:outline-none text-white font-bold bg-red-600 hover:bg-red-700 rounded-lg px-5 py-2.5"
+        >
+          AJOUTER AU PANIER
+        </button>
+        <button
+          type="button"
+          class="cursor-not-allowed text-secondary bg-white border border-gray-300 hover:bg-gray-100 font-bold rounded-lg px-5 py-2.5"
+          disabled
+        >
+          RESERVE & GO
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Delivery DIV-->
+        <div class="rounded-lg border border-gray-300 p-3 flex items-start">
+          <div class="p-2 bg-itemsBg rounded-full m-1 mr-5">
+            <img
+              src="assets/images/fast-delivery.png"
+              alt="Fast Delivery"
+              class="w-8 h-8"
+            />
+          </div>
+          <!-- Delivery Info -->
+          <div class="flex flex-col">
+            <h2 class="text-primary text-base font-bold mb-0.5">
+              Envoi à domicile
+            </h2>
+            <p class="text-secondary text-xs mb-1.5">
+              livré endéans les 3-5 jours ouvrables
+            </p>
+            <span
+              class="flex items-center text-sm font-medium text-gray-900 dark:text-white me-3"
+            >
+              <span
+                class="flex w-2.5 h-2.5 bg-green-500 rounded-full me-1.5 flex-shrink-0"
+              ></span>
+              {{ product.stockQuantity }} en stock
+            </span>
+          </div>
+        </div>
+        <!-- End Delivery DIV-->
+
+        <!-- Reserve & Go DIV-->
+        <div class="rounded-lg border border-gray-300 p-3 flex items-start">
+          <div
+            class="p-2 bg-itemsBg rounded-full m-1 mr-5 flex-shrink-0 flex items-center justify-center"
+          >
+            <img
+              src="assets/images/booking.png"
+              alt="Reserve & Go"
+              class="w-8 h-8 object-contain"
+            />
+          </div>
+          <!-- Reserve & GO Info -->
+          <div class="flex flex-col flex-grow">
+            <h2 class="text-primary text-base font-bold mb-0.5">
+              Reserve & Go
+            </h2>
+            <p class="text-secondary text-xs mb-1.5">
+              Commandez en ligne et retirez votre article en magasin.
+            </p>
+          </div>
+        </div>
+        <!-- End Reserve & Go DIV-->
+      </div>
+    </div>
+  </div>
+</section>

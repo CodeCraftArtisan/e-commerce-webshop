@@ -1,0 +1,18 @@
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background: #4f46e5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #4f46e5 !important;
+}

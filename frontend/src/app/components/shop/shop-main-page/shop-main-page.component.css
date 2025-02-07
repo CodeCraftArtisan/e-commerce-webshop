@@ -1,0 +1,34 @@
+.view-toggle {
+  text-align: right;
+  margin: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: start; /* Align items to the left */
+  gap: 15px; /* Space between list items */
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.categories-intro {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.categories-intro p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}

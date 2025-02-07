@@ -1,0 +1,119 @@
+<div
+  class="py-8 px-4 mx-auto flex flex-col justify-center max-w-screen-xl lg:py-10 md:h-[80vh]"
+>
+  <!-- Section Title -->
+  <div class="flex items-center mb-14 text-center">
+    <div class="w-2 h-10 bg-green-darker mr-4"></div>
+    <div>
+      <h2 class="text-primary text-3xl md:text-4xl font-semibold">
+        Contactez nous
+      </h2>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+    <!-- First Column -->
+    <form #contactForm="ngForm" class="w-full" (ngSubmit)="send(contactForm)">
+      <!-- Name Field -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-semibold text-gray-700"
+          >Nom:</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="form.name"
+          required
+          class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          #name="ngModel"
+        />
+        <div *ngIf="name.invalid && name.touched" class="text-red-600 text-sm">
+          Nom est requis.
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-semibold text-gray-700"
+          >Email:</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          #email="ngModel"
+        />
+        <div
+          *ngIf="email.invalid && email.touched"
+          class="text-red-600 text-sm"
+        >
+          Un email valide est requis.
+        </div>
+      </div>
+
+      <!-- Phone Field (Optional) -->
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-semibold text-gray-700"
+          >Téléphone:</label
+        >
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          [(ngModel)]="form.phone"
+          class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- Message Field -->
+      <div class="mb-4">
+        <label for="message" class="block text-sm font-semibold text-gray-700"
+          >Message:</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          [(ngModel)]="form.message"
+          required
+          class="mt-2 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          rows="4"
+          #message="ngModel"
+        ></textarea>
+        <div
+          *ngIf="message.invalid && message.touched"
+          class="text-red-600 text-sm"
+        >
+          Message est requis.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button
+          type="submit"
+          [disabled]="contactForm.invalid"
+          class="w-full cursor-pointer text-white bg-green-darker hover:bg-green font-semibold rounded-lg text-sm px-5 py-2.5 mb-5"
+        >
+          Envoyer
+        </button>
+      </div>
+    </form>
+
+    <!-- Second Column -->
+    <div class="w-full h-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2183.090398220858!2d4.457195250056853!3d50.87861115026606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dcfbe77e7d0d%3A0x50870a56a30414fc!2sBelgicastraat%209%2C%201930%20Zaventem!5e1!3m2!1sen!2sbe!4v1737361278755!5m2!1sen!2sbe"
+        class="w-full h-full"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</div>

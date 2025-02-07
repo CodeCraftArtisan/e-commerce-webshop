@@ -1,0 +1,17 @@
+.rating-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+svg {
+  color: #d1d5db; /* Default color (gray-300) */
+  transition: color 0.3s ease;
+}
+
+svg.filled {
+  color: #fbbf24; /* Filled star color (yellow-400) */
+}
+
+svg:hover {
+  color: #f59e0b; /* Hover color (yellow-500) */
+}

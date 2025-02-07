@@ -1,0 +1,97 @@
+{
+  "welcome": "Bienvenue",
+  "login": "Connexion",
+  "logout": "Déconnexion",
+  "NAVBAR": {
+    "LANG_EN": "Anglais",
+    "LANG_FR": "Français"
+  },
+  "home": {
+    "about-us": {
+      "title": "Votre partenaire en électricité, offrant des solutions fiables et durables.",
+      "paragraph": "Nous offrons des services électriques adaptés à vos besoins, que ce soit pour des projets résidentiels, commerciaux ou industriels.",
+      "button": "En savoir plus"
+    },
+    "services": {
+      "label": "Nos Services"
+    },
+    "projects": {
+      "label": "Projets",
+      "title": "Découvrez nos derniers projets",
+      "paragraph": "Découvrez comment nous combinons innovation et expertise pour créer des designs uniques et des espaces fonctionnels.",
+      "button": "Voir les projets"
+    },
+    "catalogues": {
+      "label": "Catalogues",
+      "title": "Parcourez nos catalogues",
+      "paragraph": "Découvrez notre large sélection de produits et services pour trouver les solutions parfaites à vos besoins.",
+      "button": "Explorer les catalogues"
+    }
+  },
+  "projects": {
+    "wemmel": {
+      "description": "Un projet de cœur combinant qualité et innovation, apportant un design unique et captivant qui attire l'attention de tous.",
+      "location": "Wemmel, Dorekensveld 6"
+    },
+    "pont": {
+      "description": "Une transformation unique apportant un design moderne et distinctif à cet appartement, combinant élégance et fonctionnalité pour créer un espace de vie exceptionnel.",
+      "location": "Rue Pont à Nôle 31"
+    }
+  },
+  "categories": {
+    "sectionTitle": "Parcourir par catégories",
+    "title": "Nos Catégories",
+    "description": "Parcourez nos catégories pour trouver exactement ce que vous recherchez."
+  },
+  "products": {
+    "featured": {
+      "title": "Nos produits du moment"
+    }
+  },
+  "partners": {
+    "title": "Nos Partenaires",
+    "description": "Nous collaborons avec des partenaires de premier plan pour vous offrir les meilleurs produits et services."
+  },
+  "shop": {
+    "title": "Boutique",
+    "description": "Découvrez notre collection de produits de qualité disponibles à l'achat en ligne."
+  },
+  "footer": {
+    "company": {
+      "title": "Entreprise",
+      "home": "Accueil",
+      "about": "À propos de nous",
+      "projects": "Projets",
+      "contact": "Contact",
+      "shop": "Boutique"
+    },
+    "customerService": {
+      "title": "Service Client",
+      "contactUs": "Nous Contacter",
+      "returns": "Retours et Échanges",
+      "faqs": "FAQs",
+      "shippingInfo": "Informations sur la Livraison",
+      "privacyPolicy": "Politique de Confidentialité"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Abonnez-vous à notre newsletter pour recevoir les dernières actualités et offres.",
+      "placeholder": "Entrez votre adresse e-mail"
+    },
+    "bottom": {
+      "copyright": "© 2025 Mati-Onis. Tous droits réservés."
+    },
+    "social": {
+      "facebookAlt": "Visitez notre page Facebook",
+      "instagramAlt": "Visitez notre page Instagram",
+      "twitterAlt": "Visitez notre page Twitter"
+    }
+  },
+  "navbar": {
+    "user-menu": {
+      "connexion": "Se connecter",
+      "my-account": "Ma page",
+      "sign-out": "Déconnexion"
+    }
+  }
+}

@@ -1,0 +1,181 @@
+<div class="mx-auto max-w-screen-xl">
+  <!-- Project 1 -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 my-8 md:my-20 gap-8"
+  >
+    <!-- Carousel Section (60%) -->
+    <div class="lg:col-span-6 relative w-full">
+      <div class="relative h-64 overflow-hidden md:h-96">
+        <!-- Carousel items -->
+        <div
+          *ngFor="let image of imagesWemmel; let index = index"
+          [ngClass]="{
+            'carousel-item': true,
+            active: currentIndexWemmel === index
+          }"
+          class="duration-700 ease-in-out"
+        >
+          <img
+            [src]="image"
+            class="absolute block max-h-full max-w-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            [alt]="'Slide ' + (index + 1)"
+          />
+        </div>
+        <!-- Controls -->
+        <button
+          (click)="prevSlide('wemmel')"
+          class="absolute top-0 left-0 z-10 flex items-center justify-center h-full px-4 bg-white/30 hover:bg-white/50 rounded-full focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6 text-gray-800"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+        </button>
+        <button
+          (click)="nextSlide('wemmel')"
+          class="absolute top-0 right-0 z-10 flex items-center justify-center h-full px-4 bg-white/30 hover:bg-white/50 rounded-full focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6 text-gray-800"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+        </button>
+        <!-- Indicators -->
+        <div
+          class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2"
+        >
+          <button
+            *ngFor="let image of imagesWemmel; let index = index"
+            (click)="goToSlide('wemmel', index)"
+            [ngClass]="{
+              'bg-white': currentIndexWemmel === index,
+              'bg-gray-400': currentIndexWemmel !== index
+            }"
+            class="w-3 h-3 rounded-full transition-colors duration-300 hover:bg-gray-200"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Section (40%) -->
+    <div class="lg:col-span-4 flex flex-col justify-center px-4">
+      <p class="text-lg text-primary font-medium">
+        {{ 'projects.wemmel.description' | translate }}
+      </p>
+      <p class="mt-4 text-secondary font-semibold">
+        {{ 'projects.wemmel.location' | translate }}
+      </p>
+    </div>
+  </div>
+
+  <hr class="border" />
+
+  <!-- Project 2 -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 my-8 md:my-20 gap-8"
+  >
+    <!-- Info Section (40%) -->
+    <div class="lg:col-span-4 flex flex-col justify-center px-4">
+      <p class="text-lg text-primary font-medium">
+        {{ 'projects.pont.description' | translate }}
+      </p>
+      <p class="mt-4 text-secondary font-semibold">
+        {{ 'projects.pont.location' | translate }}
+      </p>
+    </div>
+
+    <!-- Carousel Section (60%) -->
+    <div class="lg:col-span-6 relative w-full">
+      <div class="relative h-64 overflow-hidden md:h-96">
+        <!-- Carousel items -->
+        <div
+          *ngFor="let image of imagesPont; let index = index"
+          [ngClass]="{
+            'carousel-item': true,
+            active: currentIndexPont === index
+          }"
+          class="duration-700 ease-in-out"
+        >
+          <img
+            [src]="image"
+            class="absolute block max-h-full max-w-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            [alt]="'Slide ' + (index + 1)"
+          />
+        </div>
+        <!-- Controls -->
+        <button
+          (click)="prevSlide('pont')"
+          class="absolute top-0 left-0 z-10 flex items-center justify-center h-full px-4 bg-white/30 hover:bg-white/50 rounded-full focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6 text-gray-800"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+        </button>
+        <button
+          (click)="nextSlide('pont')"
+          class="absolute top-0 right-0 z-10 flex items-center justify-center h-full px-4 bg-white/30 hover:bg-white/50 rounded-full focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6 text-gray-800"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+        </button>
+        <!-- Indicators -->
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2"
+        >
+          <button
+            *ngFor="let image of imagesPont; let index = index"
+            (click)="goToSlide('pont', index)"
+            [ngClass]="{
+              'bg-white': currentIndexPont === index,
+              'bg-gray-400': currentIndexPont !== index
+            }"
+            class="w-3 h-3 rounded-full transition-colors duration-300 hover:bg-gray-200"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+<div class="bg-btn pt-5">
+  <footer class="py-8 px-4 mx-auto max-w-screen-xl lg:py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      <!-- Company Section -->
+      <div>
+        <h5 class="text-lg text-primary font-semibold mb-4">
+          {{ "footer.company.title" | translate }}
+        </h5>
+        <ul class="space-y-2">
+          <li>
+            <a class="text-secondary" routerLink="/">
+              {{ "footer.company.home" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/about-us">
+              {{ "footer.company.about" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/projects">
+              {{ "footer.company.projects" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/contact">
+              {{ "footer.company.contact" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/shop">
+              {{ "footer.company.shop" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Customer Service Section -->
+      <div>
+        <h5 class="text-lg font-semibold mb-4">
+          {{ "footer.customerService.title" | translate }}
+        </h5>
+        <ul class="space-y-2">
+          <li>
+            <a class="text-secondary" routerLink="/contact">
+              {{ "footer.customerService.contactUs" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/features">
+              {{ "footer.customerService.returns" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/pricing">
+              {{ "footer.customerService.faqs" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/faqs">
+              {{ "footer.customerService.shippingInfo" | translate }}
+            </a>
+          </li>
+          <li>
+            <a class="text-secondary" routerLink="/about">
+              {{ "footer.customerService.privacyPolicy" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="col-span-1 md:col-span-2">
+        <form>
+          <h5 class="text-lg font-semibold mb-4">
+            {{ "footer.newsletter.title" | translate }}
+          </h5>
+          <p class="text-gray-600 mb-4">
+            {{ "footer.newsletter.description" | translate }}
+          </p>
+          <div class="relative w-[300px]">
+            <!-- Input Field -->
+            <input
+              id="newsletter1"
+              type="email"
+              class="p-2 pl-4 pr-12 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="{{ 'footer.newsletter.placeholder' | translate }}"
+            />
+            <!-- Button Inside Input -->
+            <button
+              type="button"
+              class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4l16 8-16 8V4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center border-t border-gray-300 pt-4"
+    >
+      <p class="text-gray-600 text-sm">
+        {{ "footer.bottom.copyright" | translate: { year: 2024, company: 'Matis-Onis SRL' } }}
+      </p>
+      <ul class="flex space-x-4 mt-4 sm:mt-0">
+        <li>
+          <a
+            href="https://www.facebook.com/mati.onis.srl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-500 transition"
+          >
+            <img
+              src="../../../assets/images/facebook(1).png"
+              alt="{{ 'footer.social.facebookAlt' | translate }}"
+              class="w-5 h-5"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-500 transition"
+          >
+            <img
+              src="../../../assets/images/instagram.png"
+              alt="{{ 'footer.social.instagramAlt' | translate }}"
+              class="w-5 h-5"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-500 transition"
+          >
+            <img
+              src="../../../assets/images/twitter.png"
+              alt="{{ 'footer.social.twitterAlt' | translate }}"
+              class="w-5 h-5"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</div>

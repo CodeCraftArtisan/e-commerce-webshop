@@ -1,0 +1,77 @@
+<div class="py-8 px-4 mx-auto max-w-screen-md lg:py-10">
+  <!-- Introduction Section -->
+  <div>
+    <div
+      class="uppercase text-sm inline-flex items-center mb-5 text-btn font-semibold"
+    >
+      {{ 'about.start.title' | translate }}
+    </div>
+    <h2 class="text-primary text-3xl font-semibold mb-5 leading-normal">
+      {{ 'about.start.description' | translate }}
+    </h2>
+    <p class="text-secondary leading-relaxed mb-6">
+      {{ 'about.start.story' | translate }} 
+      <span class="font-semibold text-primary">
+        {{ 'about.start.founderName' | translate }}
+      </span>, 
+      {{ 'about.start.storyContinued' | translate }}
+    </p>
+    <p class="text-secondary leading-relaxed mb-12">
+      {{ 'about.start.companyNamePart1' | translate }} 
+      <span class="font-semibold text-green-darker">
+        {{ 'about.start.companyName' | translate }}
+      </span>, 
+      {{ 'about.start.companyNamePart2' | translate }}
+    </p>
+
+    <!-- Expertise Section -->
+    <h3
+      class="text-primary text-2xl font-semibold mb-6 flex items-center gap-3"
+    >
+      {{ 'about.expertise.title' | translate }}
+    </h3>
+    <ul class="space-y-6">
+      <!-- Electrical Expertise -->
+      <li class="flex items-start gap-4">
+        <div>
+          <p class="text-primary font-semibold">
+            {{ 'about.expertise.electrical.title' | translate }}
+          </p>
+          <p class="text-secondary">
+            {{ 'about.expertise.electrical.description' | translate }}
+          </p>
+        </div>
+      </li>
+      <!-- Refrigeration Techniques -->
+      <li class="flex items-start gap-4">
+        <div>
+          <p class="text-primary font-semibold">
+            {{ 'about.expertise.cold.title' | translate }}
+          </p>
+          <p class="text-secondary">
+            {{ 'about.expertise.cold.description' | translate }} 
+            <span class="font-semibold">
+              {{ 'about.expertise.cold.certification' | translate }}
+            </span> 
+            {{ 'about.expertise.cold.additionalDetails' | translate }}
+          </p>
+        </div>
+      </li>
+      <!-- Additional Services -->
+      <li class="flex items-start gap-4">
+        <div>
+          <p class="text-primary font-semibold">
+            {{ 'about.expertise.additional.title' | translate }}
+          </p>
+          <p class="text-secondary">
+            {{ 'about.expertise.additional.description' | translate }}
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="text-secondary leading-relaxed mt-8">
+      {{ 'about.conclusion' | translate }}
+    </p>
+  </div>
+</div>

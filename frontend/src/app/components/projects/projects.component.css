@@ -1,0 +1,27 @@
+/* Carousel item container: */
+.carousel-item {
+  opacity: 0; /* Default: hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out effect */
+  position: absolute; /* Make sure the items are stacked on top of each other */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Make the active image visible */
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Center the image properly */
+.carousel-item img {
+  max-width: 90%; /* Adjust to make the image larger */
+  max-height: 90%; /* Ensure the image doesn't overflow */
+  object-fit: contain; /* Make sure the image retains its aspect ratio */
+}

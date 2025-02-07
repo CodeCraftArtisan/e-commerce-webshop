@@ -1,0 +1,80 @@
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+out/
+.vscode/
+
+# Maven and Gradle files
+target/
+build/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE specific files
+*.swp
+*.swo
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+*.tld
+*.log.*
+
+# Environment files
+.env
+*.env.*
+
+# Application files
+*.db
+*.sqlite
+
+# Coverage reports
+.coverage
+jacoco.exec
+
+# Generated files
+generated/
+gen/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swm
+
+# Spring-specific
+.springBeans
+
+# Lombok config
+lombok.config
+
+# Node.js dependencies
+node_modules/
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+
+# Other caches and binaries
+*.gz
+*.class
+
+# OS generated files
+.DS_Store
+*.pyc
+__pycache__/
+
+# Mac OS cache files
+Icon?

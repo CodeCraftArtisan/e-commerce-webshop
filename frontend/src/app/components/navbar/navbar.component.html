@@ -1,0 +1,30 @@
+<!-- Barre supérieure avec le menu de langue -->
+<nav class="bg-black">
+  <div class="flex justify-end items-center mx-auto max-w-screen-xl px-4">
+    <app-language-menu></app-language-menu>
+  </div>
+</nav>
+
+<!-- Barre principale avec logo, menu mobile et user menu -->
+<nav class="bg-itemsBg">
+  <div
+    class="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative"
+  >
+    <!-- Logo à gauche -->
+    <a routerLink="/" class="flex items-center">
+      <img
+        src="assets/images/logo-transparent-png.png"
+        class="w-20 h-20"
+        alt="logo"
+      />
+    </a>
+
+    <div
+      class="flex justify-end md:justify-between gap-5 flex-row-reverse md:flex-row"
+    >
+      <app-mobile-menu></app-mobile-menu>
+
+      <app-user-menu></app-user-menu>
+    </div>
+  </div>
+</nav>

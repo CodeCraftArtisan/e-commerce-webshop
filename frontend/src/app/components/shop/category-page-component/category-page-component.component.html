@@ -1,0 +1,61 @@
+<div
+  class="h-[50vh] flex flex-col md:flex-row mx-auto max-w-screen-xl px-4 gap-8 mt-8"
+>
+  <!-- Image Section (60% of width on md and larger, full width on smaller screens) -->
+  <div class="h-full md:w-3/5 w-full">
+    <img
+      [src]="category?.imageUrl"
+      alt=""
+      class="h-full w-full object-cover object-center"
+    />
+  </div>
+
+  <!-- Text Section (40% of width on md and larger, full width on smaller screens) -->
+  <div class="h-full md:w-2/5 w-full flex items-center justify-center">
+    <h2
+      class="text-primary lg:text-5xl md:text-3xl text-2xl font-semibold text-center px-8"
+    >
+      {{ category?.name }}
+    </h2>
+  </div>
+</div>
+
+<section class="py-8 px-4 mx-auto max-w-screen-xl lg:py-10">
+  <!-- Products List -->
+  <div
+    *ngIf="products.length; else noProducts"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+  >
+    <div
+      *ngFor="let product of products"
+      class="overflow-hidden transform transition-transform hover:-translate-y-1"
+    >
+      <a [routerLink]="['/product', product.id]" class="block pb-4">
+        <div class="">
+          <div class="bg-itemsBg">
+            <img
+              [src]="product.imageUrls[0]"
+              class="object-cover mx-auto rounded mb-3"
+              [alt]="product.name"
+            />
+          </div>
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h5 class="text-base font-medium text-primary mb-2">
+                {{ product.name }}
+              </h5>
+              <p class="text-xs text-btn">{{ product.category[0] }}</p>
+            </div>
+            <p class="text-sm text-secondary">
+              {{ product.description }}
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<ng-template #noProducts>
+  <p>No products found for this category.</p>
+</ng-template>

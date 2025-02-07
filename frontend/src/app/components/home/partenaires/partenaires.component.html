@@ -1,0 +1,20 @@
+<div class="partner-carousel bg-green overflow-hidden">
+  <div class="scroll-wrapper flex w-full" #scrollWrapper>
+    <div
+      class="scroll-content flex gap-5 animate-infinite-scroll"
+      #scrollContent
+    >
+      <!-- Logos dynamically generated -->
+      <div
+        class="logo flex justify-center items-center w-36 h-28 flex-shrink-0"
+        *ngFor="let logo of duplicatedLogos"
+      >
+        <img
+          [src]="logo.url"
+          alt="Logo {{ logo.id }}"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
+  </div>
+</div>

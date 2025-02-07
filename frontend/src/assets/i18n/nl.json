@@ -1,0 +1,91 @@
+{
+    "welcome": "Welkom",
+    "login": "Inloggen",
+    "logout": "Uitloggen",
+    "NAVBAR": {
+      "LANG_EN": "Engels",
+      "LANG_FR": "Frans"
+    },
+    "home": {
+      "about-us": {
+        "title": "Uw partner in elektriciteit, met betrouwbare en duurzame oplossingen.",
+        "paragraph": "Wij bieden elektrische diensten op maat, of het nu gaat om residentiële, commerciële of industriële projecten.",
+        "button": "Meer weten"
+      },
+      "services": {
+        "label": "Onze Diensten"
+      },
+      "projects": {
+        "label": "Projecten",
+        "title": "Ontdek onze nieuwste projecten",
+        "paragraph": "Ontdek hoe wij innovatie en expertise combineren om unieke ontwerpen en functionele ruimtes te creëren.",
+        "button": "Bekijk projecten"
+      },
+      "catalogues": {
+        "label": "Catalogi",
+        "title": "Blader door onze catalogi",
+        "paragraph": "Bekijk ons brede assortiment aan producten en diensten om de perfecte oplossingen voor uw behoeften te vinden.",
+        "button": "Verken catalogi"
+      }
+    },
+    "projects": {
+      "wemmel": {
+        "description": "Een project uit het hart dat kwaliteit en innovatie combineert, met een uniek en opvallend ontwerp dat ieders aandacht trekt.",
+        "location": "Wemmel, Dorekensveld 6"
+      },
+      "pont": {
+        "description": "Een unieke transformatie met een modern en onderscheidend ontwerp voor dit appartement, waarbij elegantie en functionaliteit worden gecombineerd om een uitzonderlijke leefruimte te creëren.",
+        "location": "Rue Pont à Nôle 31"
+      }
+    },
+    "categories": {
+      "sectionTitle": "Blader op categorieën",
+      "title": "Onze Categorieën",
+      "description": "Blader door onze categorieën om precies te vinden wat u zoekt."
+    },
+    "products": {
+      "featured": {
+        "title": "Onze Aanbevolen Producten"
+      }
+    },
+    "partners": {
+      "title": "Onze Partners",
+      "description": "Wij werken samen met toonaangevende partners om u de beste producten en diensten te bieden."
+    },
+    "shop": {
+      "title": "Winkel",
+      "description": "Ontdek onze collectie kwaliteitsproducten die online beschikbaar zijn voor aankoop."
+    },
+    "footer": {
+      "company": {
+        "title": "Bedrijf",
+        "home": "Home",
+        "about": "Over Ons",
+        "projects": "Projecten",
+        "contact": "Contact",
+        "shop": "Winkel"
+      },
+      "customerService": {
+        "title": "Klantenservice",
+        "contactUs": "Neem Contact Op",
+        "returns": "Retouren & Omruilingen",
+        "faqs": "Veelgestelde Vragen",
+        "shippingInfo": "Verzendinformatie",
+        "privacyPolicy": "Privacybeleid"
+      },
+      "newsletter": {
+        "title": "Nieuwsbrief",
+        "description": "Schrijf u in voor onze nieuwsbrief om de laatste updates en aanbiedingen te ontvangen.",
+        "placeholder": "Voer uw e-mailadres in"
+      },
+      "bottom": {
+        "copyright": "© 2025 Mati-Onis. Alle rechten voorbehouden."
+      },
+      "social": {
+        "facebookAlt": "Bezoek onze Facebook-pagina",
+        "instagramAlt": "Bezoek onze Instagram-pagina",
+        "twitterAlt": "Bezoek onze Twitter-pagina"
+      }
+    }
+  }
+  

@@ -1,0 +1,18 @@
+<div class="rating-container flex items-center gap-1">
+  <!-- Loop to generate stars -->
+  <ng-container *ngFor="let star of [].constructor(maxStars); let i = index">
+    <svg
+      (click)="setRating(i + 1)"
+      [class.filled]="i < currentRating"
+      [class.read-only]="readOnly"
+      class="w-5 h-5 cursor-pointer"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path
+        d="M12 .587l3.668 7.568L24 9.423l-6 5.843 1.42 8.272L12 18.64l-7.42 4.897L6 15.266 0 9.423l8.332-1.268L12 .587z"
+      />
+    </svg>
+  </ng-container>
+</div>

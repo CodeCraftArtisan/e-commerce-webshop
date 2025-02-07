@@ -1,0 +1,66 @@
+{
+  "welcome": "Welcome",
+  "login": "Login",
+  "logout": "Logout",
+  "NAVBAR": {
+    "LANG_EN": "English",
+    "LANG_FR": "French"
+  },
+  "home": {
+    "about-us": {
+      "title": "Your partner in electricity, providing reliable and sustainable solutions.",
+      "paragraph": "We offer electrical services tailored to your needs, whether for residential, commercial, or industrial projects.",
+      "button": "Learn more"
+    },
+    "services": {
+      "label": "Our Services"
+    },
+    "projects": {
+      "label": "Projects",
+      "title": "Discover our latest projects",
+      "paragraph": "Explore how we blend innovation and expertise to bring unique designs and functional spaces to life.",
+      "button": "View projects"
+    },
+    "catalogues": {
+      "label": "Catalogues",
+      "title": "Browse our catalogues",
+      "paragraph": "Check out our wide selection of products and services to find the perfect solutions for your needs.",
+      "button": "Explore catalogues"
+    }
+  },
+  "projects": {
+    "wemmel": {
+      "description": "A heartfelt project combining quality and innovation, bringing a unique and captivating design that catches everyone's attention.",
+      "location": "Wemmel, Dorekensveld 6"
+    },
+    "pont": {
+      "description": "A unique transformation bringing a distinctive and modern design to this apartment, combining elegance and functionality to create an exceptional living space.",
+      "location": "Rue Pont à Nôle 31"
+    }
+  },
+  "categories": {
+    "sectionTitle": "Browse by Categories",
+    "title": "Our Categories",
+    "description": "Browse through our categories to find exactly what you're looking for."
+  },
+  "products": {
+    "featured": {
+      "title": "Our Featured Products"
+    }
+  },
+  "partners": {
+    "title": "Our Partners",
+    "description": "We collaborate with leading partners to bring you the best products and services."
+  },
+  "shop": {
+    "title": "Shop",
+    "description": "Discover our collection of quality products available for purchase online."
+  },
+  "navbar": {
+    "user-menu": {
+      "connexion": "Sign In",
+      "my-account": "My account",
+      "sign-out": "Sign out"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/webshop
+    username: user
+    password: supersecretpassword
+    driver-class-name: org.postgresql.Driver
+
+  # Optional: Hibernate JPA settings (if you're using Spring Data JPA)
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+
+    # Optional: Show SQL in logs
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
