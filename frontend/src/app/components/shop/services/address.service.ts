@@ -8,7 +8,7 @@ import { Address } from '../../types';
   providedIn: 'root',
 })
 export class AddressService {
-  private apiUrl = 'http://localhost:8080/api/addresses';
+  private apiUrl = 'https://e-commerce-webshop-render.orender.com/api/addresses';
 
   constructor(private http: HttpClient) {}
 

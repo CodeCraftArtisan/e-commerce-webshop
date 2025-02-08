@@ -7,7 +7,7 @@ import { Order } from '../../types';
   providedIn: 'root',
 })
 export class OrderService {
-  private apiUrl = 'http://localhost:8080/api/orders';
+  private apiUrl = 'https://e-commerce-webshop-render.orender.com/api/orders';
 
   constructor(private http: HttpClient) {}
 

@@ -47,7 +47,7 @@ export class MyAccountComponent {
 
       // Envoyer les données modifiées au backend
       this.http
-        .put('http://localhost:8080/api/v1/auth/update', formValues)
+        .put('https://e-commerce-webshop-render.orenderer.com/api/v1/auth/update', formValues)
         .subscribe(
           (response) => {
             this.isSubmitting = false;
@@ -62,3 +62,4 @@ export class MyAccountComponent {
     }
   }
 }
+

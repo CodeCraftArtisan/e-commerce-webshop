@@ -7,7 +7,7 @@ import { Cart } from '../../types';
   providedIn: 'root',
 })
 export class CartService {
-  private apiUrl = 'http://localhost:8080/api/carts';
+  private apiUrl = 'https://e-commerce-webshop-render.orender.com/api/carts';
 
   constructor(private http: HttpClient) {}
 
