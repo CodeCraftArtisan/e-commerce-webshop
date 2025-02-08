@@ -8,7 +8,7 @@
   },
   "home": {
     "about-us": {
-      "title": "Your partner in electricity, providing reliable and sustainable solutions.",
+      "title": "Your partner in electricity, offering reliable and sustainable solutions.",
       "paragraph": "We offer electrical services tailored to your needs, whether for residential, commercial, or industrial projects.",
       "button": "Learn more"
     },
@@ -18,14 +18,14 @@
     "projects": {
       "label": "Projects",
       "title": "Discover our latest projects",
-      "paragraph": "Explore how we blend innovation and expertise to bring unique designs and functional spaces to life.",
+      "paragraph": "See how we combine innovation and expertise to create unique designs and functional spaces.",
       "button": "View projects"
     },
     "catalogues": {
-      "label": "Catalogues",
-      "title": "Browse our catalogues",
-      "paragraph": "Check out our wide selection of products and services to find the perfect solutions for your needs.",
-      "button": "Explore catalogues"
+      "label": "Catalogs",
+      "title": "Browse our catalogs",
+      "paragraph": "Discover our wide selection of products and services to find the perfect solutions for your needs.",
+      "button": "Explore catalogs"
     }
   },
   "projects": {
@@ -34,33 +34,94 @@
       "location": "Wemmel, Dorekensveld 6"
     },
     "pont": {
-      "description": "A unique transformation bringing a distinctive and modern design to this apartment, combining elegance and functionality to create an exceptional living space.",
+      "description": "A unique transformation bringing a modern and distinctive design to this apartment, combining elegance and functionality to create an exceptional living space.",
       "location": "Rue Pont à Nôle 31"
     }
   },
   "categories": {
-    "sectionTitle": "Browse by Categories",
+    "sectionTitle": "Browse by categories",
     "title": "Our Categories",
-    "description": "Browse through our categories to find exactly what you're looking for."
+    "description": "Browse our categories to find exactly what you are looking for."
   },
   "products": {
     "featured": {
-      "title": "Our Featured Products"
+      "title": "Our featured products"
     }
   },
   "partners": {
     "title": "Our Partners",
-    "description": "We collaborate with leading partners to bring you the best products and services."
+    "description": "We collaborate with top partners to offer you the best products and services."
   },
   "shop": {
     "title": "Shop",
-    "description": "Discover our collection of quality products available for purchase online."
+    "description": "Discover our collection of quality products available for online purchase."
+  },
+  "footer": {
+    "company": {
+      "title": "Company",
+      "home": "Home",
+      "about": "About Us",
+      "projects": "Projects",
+      "contact": "Contact",
+      "shop": "Shop"
+    },
+    "customerService": {
+      "title": "Customer Service",
+      "contactUs": "Contact Us",
+      "returns": "Returns & Exchanges",
+      "faqs": "FAQs",
+      "shippingInfo": "Shipping Information",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "newsletter": {
+      "title": "Newsletter",
+      "description": "Subscribe to our newsletter to receive the latest news and offers.",
+      "placeholder": "Enter your email address"
+    },
+    "bottom": {
+      "copyright": "© 2025 Mati-Onis. All rights reserved."
+    },
+    "social": {
+      "facebookAlt": "Visit our Facebook page",
+      "instagramAlt": "Visit our Instagram page",
+      "twitterAlt": "Visit our Twitter page"
+    }
   },
   "navbar": {
     "user-menu": {
-      "connexion": "Sign In",
-      "my-account": "My account",
+      "connexion": "Sign in",
+      "my-account": "My Account",
       "sign-out": "Sign out"
     }
+  },
+  "about": {
+    "start": {
+      "title": "How it all started",
+      "description": "Building a sustainable business that combines expertise, passion, and family values while leaving a legacy inspired by its children.",
+      "story": "With over 14 years of experience in the electrical field, our story is one of constant progression: from employee to associate, then independent, leading to the creation of this company that brings together all these years of work and dedication. Our founder,",
+      "founderName": "Barba Marius",
+      "storyContinued": "turned his dream into reality through constant effort and passion for his profession.",
+      "companyNamePart1": "The company name,",
+      "companyName": "Mati-Onis",
+      "companyNamePart2": "carries deep personal significance, inspired by his two children: Mathias ('Mati') and Eunice ('Onis'). Thus, every completed project reflects this emotional connection."
+    },
+    "expertise": {
+      "title": "Our areas of expertise",
+      "electrical": {
+        "title": "The electrical field:",
+        "description": "Residential and industrial interventions."
+      },
+      "cold": {
+        "title": "Refrigeration techniques:",
+        "description": "Professional maintenance and installation services for equipment such as air conditioning, heat pumps, and other related systems, supported by qualifications like",
+        "certification": "ResCert",
+        "additionalDetails": "and the status of certified refrigeration technician."
+      },
+      "additional": {
+        "title": "Other services:",
+        "description": "Plumbing, heating, controlled mechanical ventilation (CMV), carpentry, and much more."
+      }
+    },
+    "conclusion": "All our services are carried out to high standards of professionalism, with a focus on quality and personalized solutions to turn our clients' dreams into concrete projects."
   }
 }

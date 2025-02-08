@@ -93,5 +93,35 @@
       "my-account": "Ma page",
       "sign-out": "Déconnexion"
     }
+  },
+  "about": {
+    "start": {
+      "title": "Comment tout a commencé",
+      "description": "Bâtir une entreprise durable qui allie expertise, passion et valeurs familiales, tout en laissant un héritage inspiré par ses enfants.",
+      "story": "Avec plus de 14 ans d’expérience dans le domaine électrique, notre histoire est celle d’une progression constante : d’employé à associé, puis indépendant, jusqu’à la création de cette société qui rassemble toutes ces années de travail et de dévouement. Notre fondateur,",
+      "founderName": "Barba Marius",
+      "storyContinued": "a transformé son rêve en réalité grâce à ses efforts constants et à sa passion pour son métier.",
+      "companyNamePart1": "Le nom de l’entreprise,",
+      "companyName": "Mati-Onis",
+      "companyNamePart2": "porte une signification profondément personnelle, inspiré par ses deux enfants : Mathias (« Mati ») et Eunice (« Onis »). Ainsi, chaque projet réalisé reflète cette connexion émotionnelle."
+    },
+    "expertise": {
+      "title": "Nos domaines d’expertise",
+      "electrical": {
+        "title": "Le domaine électrique :",
+        "description": "Interventions résidentielles et industrielles."
+      },
+      "cold": {
+        "title": "La technique du froid :",
+        "description": "Services professionnels d’entretien et d’installation d’équipements tels que climatisation, pompes à chaleur et autres systèmes connexes, soutenus par des qualifications comme",
+        "certification": "ResCert",
+        "additionalDetails": "et le statut de technicien agréé en technique du froid."
+      },
+      "additional": {
+        "title": "Autres services :",
+        "description": "Installations sanitaires, chauffage, VMC (ventilation mécanique contrôlée), menuiserie, et bien plus encore."
+      }
+    },
+    "conclusion": "Tous nos services sont réalisés selon des normes élevées de professionnalisme, avec un accent sur la qualité et des solutions personnalisées pour transformer les rêves de nos clients en projets concrets."
   }
 }
