@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface ContactForm {
   name: string;
@@ -13,7 +14,7 @@ interface ContactForm {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
@@ -26,8 +27,7 @@ export class ContactComponent {
     phone: '',
   };
 
-  constructor(private http: HttpClient){
-  }
+  constructor(private http: HttpClient) {}
 
   send(contactForm: any) {
     if (contactForm.invalid) {

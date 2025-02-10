@@ -1,12 +1,14 @@
 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="md:py-8">
-  <h2 class="text-2xl font-bold mb-6 text-primary">Se connecter</h2>
+  <h2 class="text-2xl font-bold mb-6 text-primary">
+    {{ "signIn.title" | translate }}
+  </h2>
 
   <!-- Email Input -->
   <div class="mb-5">
     <label
       for="email-address-icon"
       class="block mb-2 text-sm font-medium text-secondary"
-      >Email</label
+      >{{ "signIn.email" | translate }}</label
     >
     <div class="relative">
       <div
@@ -39,15 +41,21 @@
       *ngIf="email.invalid && (email.dirty || email.touched)"
       class="text-red-500 text-sm mt-1"
     >
-      <small *ngIf="email.errors?.['required']">Email is required.</small>
-      <small *ngIf="email.errors?.['email']">Invalid email format.</small>
+      <small *ngIf="email.errors?.['required']">{{
+        "signIn.emailRequired" | translate
+      }}</small>
+      <small *ngIf="email.errors?.['email']">{{
+        "signIn.invalidEmail" | translate
+      }}</small>
     </div>
   </div>
 
   <!-- Password Input -->
   <div class="mb-5">
-    <label for="password" class="block mb-2 text-sm font-medium text-secondary"
-      >Mot de passe</label
+    <label
+      for="password"
+      class="block mb-2 text-sm font-medium text-secondary"
+      >{{ "signIn.password" | translate }}</label
     >
     <input
       type="password"
@@ -60,10 +68,12 @@
       *ngIf="password.invalid && (password.dirty || password.touched)"
       class="text-red-500 text-sm mt-1"
     >
-      <small *ngIf="password.errors?.['required']">Password is required.</small>
-      <small *ngIf="password.errors?.['minlength']"
-        >Password must be at least 6 characters.</small
-      >
+      <small *ngIf="password.errors?.['required']">{{
+        "signIn.passwordRequired" | translate
+      }}</small>
+      <small *ngIf="password.errors?.['minlength']">{{
+        "signIn.passwordMinLength" | translate
+      }}</small>
     </div>
   </div>
 
@@ -73,7 +83,7 @@
     class="w-full cursor-pointer text-white bg-green-darker hover:bg-green font-semibold rounded-lg text-sm px-5 py-2.5 mb-5"
     [disabled]="signInForm.invalid"
   >
-    SE CONNECTER
+    {{ "signIn.signInButton" | translate }}
   </button>
 
   <!-- Divider -->
@@ -102,7 +112,7 @@
         clip-rule="evenodd"
       />
     </svg>
-    Sign in with Facebook
+    {{ "signIn.signInWithFacebook" | translate }}
   </button>
 
   <div
@@ -111,7 +121,7 @@
     class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-md opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800"
   >
     <div class="px-3 py-2">
-      <p>Méthode de connexion pas encore disponible</p>
+      <p>{{ "signIn.facebookTooltip" | translate }}</p>
     </div>
     <div data-popper-arrow></div>
   </div>
@@ -134,7 +144,7 @@
         clip-rule="evenodd"
       />
     </svg>
-    Sign in with Google
+    {{ "signIn.signInWithGoogle" | translate }}
   </button>
 
   <div
@@ -143,7 +153,7 @@
     class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 bg-white border border-gray-200 rounded-lg shadow-md opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800"
   >
     <div class="px-3 py-2">
-      <p>Méthode de connexion pas encore disponible</p>
+      <p>{{ "signIn.googleTooltip" | translate }}</p>
     </div>
     <div data-popper-arrow></div>
   </div>

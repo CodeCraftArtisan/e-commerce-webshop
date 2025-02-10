@@ -49,6 +49,7 @@
         <use xlink:href="#e" x="2470" />
       </g>
     </svg>
+
     <svg
       [ngClass]="{
         block: selectedLanguage === 'fr',
@@ -65,29 +66,134 @@
         <path fill="#EF4135" d="M340 0h170v512H340z" />
       </g>
     </svg>
+
+    <svg
+      [ngClass]="{
+        block: selectedLanguage === 'nl',
+        hidden: selectedLanguage !== 'nl'
+      }"
+      class="w-5 h-5 rounded-full mr-3"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+    >
+      <clipPath id="circle-nl">
+        <circle cx="256" cy="256" r="256" />
+      </clipPath>
+      <g clip-path="url(#circle-nl)">
+        <path fill="#21468B" d="M0 0h512v170.7H0z" />
+        <path fill="#FFF" d="M0 170.7h512v170.6H0z" />
+        <path fill="#AE1C28" d="M0 341.3h512V512H0z" />
+      </g>
+    </svg>
+
     <!-- Dynamically change language name -->
-    {{ selectedLanguage === "en" ? "English" : "Français" }}
+    {{
+      selectedLanguage === "en"
+        ? "English"
+        : selectedLanguage === "fr"
+        ? "Français"
+        : "Nederlands"
+    }}
   </button>
+
   <!-- Dropdown -->
   <div
     class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
     id="language-dropdown-menu"
   >
     <ul class="py-2 font-medium" role="none">
+      <!-- English -->
       <li>
         <button
           (click)="useLanguage('en')"
-          class="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
         >
+          <svg
+            class="w-5 h-5 rounded-full mr-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 3900 3900"
+          >
+            <path fill="#b22234" d="M0 0h7410v3900H0z" />
+            <path
+              d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0"
+              stroke="#fff"
+              stroke-width="300"
+            />
+            <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+            <g fill="#fff">
+              <g id="d">
+                <g id="c">
+                  <g id="e">
+                    <g id="b">
+                      <path
+                        id="a"
+                        d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"
+                      />
+                      <use xlink:href="#a" y="420" />
+                      <use xlink:href="#a" y="840" />
+                      <use xlink:href="#a" y="1260" />
+                      <use xlink:href="#a" y="1680" />
+                    </g>
+                  </g>
+                  <use xlink:href="#b" x="247" y="210" />
+                </g>
+                <use xlink:href="#c" x="494" />
+              </g>
+              <use xlink:href="#d" x="988" />
+              <use xlink:href="#c" x="1976" />
+              <use xlink:href="#e" x="2470" />
+            </g>
+          </svg>
           {{ "NAVBAR.LANG_EN" | translate }}
         </button>
       </li>
+
+      <!-- French -->
       <li>
         <button
           (click)="useLanguage('fr')"
-          class="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
         >
+          <svg
+            class="w-5 h-5 rounded-full mr-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <g fill="evenodd">
+              <path fill="#0055A4" d="M0 0h170v512H0z" />
+              <path fill="#FFFFFF" d="M170 0h170v512H170z" />
+              <path fill="#EF4135" d="M340 0h170v512H340z" />
+            </g>
+          </svg>
           {{ "NAVBAR.LANG_FR" | translate }}
+        </button>
+      </li>
+
+      <!-- Dutch -->
+      <!-- Dutch -->
+      <li>
+        <button
+          (click)="useLanguage('nl')"
+          class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+          <svg
+            class="w-5 h-5 rounded-full mr-2"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <clipPath id="circle">
+              <circle cx="256" cy="256" r="256" />
+            </clipPath>
+            <g clip-path="url(#circle)">
+              <path fill="#21468B" d="M0 0h512v170.7H0z" />
+              <path fill="#FFF" d="M0 170.7h512v170.6H0z" />
+              <path fill="#AE1C28" d="M0 341.3h512V512H0z" />
+            </g>
+          </svg>
+          {{ "NAVBAR.LANG_NL" | translate }}
         </button>
       </li>
     </ul>

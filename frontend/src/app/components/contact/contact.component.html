@@ -6,7 +6,7 @@
     <div class="w-2 h-10 bg-green-darker mr-4"></div>
     <div>
       <h2 class="text-primary text-3xl md:text-4xl font-semibold">
-        Contactez nous
+        {{ "contact.title" | translate }}
       </h2>
     </div>
   </div>
@@ -16,9 +16,9 @@
     <form #contactForm="ngForm" class="w-full" (ngSubmit)="send(contactForm)">
       <!-- Name Field -->
       <div class="mb-4">
-        <label for="name" class="block text-sm font-semibold text-gray-700"
-          >Nom:</label
-        >
+        <label for="name" class="block text-sm font-semibold text-gray-700">
+          {{ "contact.name" | translate }}:
+        </label>
         <input
           type="text"
           id="name"
@@ -29,14 +29,14 @@
           #name="ngModel"
         />
         <div *ngIf="name.invalid && name.touched" class="text-red-600 text-sm">
-          Nom est requis.
+          {{ "contact.nameRequired" | translate }}
         </div>
       </div>
 
       <!-- Email Field -->
       <div class="mb-4">
         <label for="email" class="block text-sm font-semibold text-gray-700"
-          >Email:</label
+          >{{ "contact.email" | translate }}:</label
         >
         <input
           type="email"
@@ -52,15 +52,16 @@
           *ngIf="email.invalid && email.touched"
           class="text-red-600 text-sm"
         >
-          Un email valide est requis.
+          {{ "contact.emailRequired" | translate }}
         </div>
       </div>
 
       <!-- Phone Field (Optional) -->
       <div class="mb-4">
         <label for="phone" class="block text-sm font-semibold text-gray-700"
-          >Téléphone:</label
+          >{{ "contact.phone" | translate }}:</label
         >
+
         <input
           type="text"
           id="phone"
@@ -73,7 +74,7 @@
       <!-- Message Field -->
       <div class="mb-4">
         <label for="message" class="block text-sm font-semibold text-gray-700"
-          >Message:</label
+          >{{ "contact.message" | translate }}:</label
         >
         <textarea
           id="message"
@@ -88,7 +89,7 @@
           *ngIf="message.invalid && message.touched"
           class="text-red-600 text-sm"
         >
-          Message est requis.
+          {{ "contact.messageRequired" | translate }}
         </div>
       </div>
 
@@ -99,7 +100,7 @@
           [disabled]="contactForm.invalid"
           class="w-full cursor-pointer text-white bg-green-darker hover:bg-green font-semibold rounded-lg text-sm px-5 py-2.5 mb-5"
         >
-          Envoyer
+          {{ "contact.send" | translate }}
         </button>
       </div>
     </form>

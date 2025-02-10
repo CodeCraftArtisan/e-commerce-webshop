@@ -4,7 +4,8 @@
   "logout": "Uitloggen",
   "NAVBAR": {
     "LANG_EN": "Engels",
-    "LANG_FR": "Frans"
+    "LANG_FR": "Frans",
+    "LANG_NL": "Nederlands"
   },
   "home": {
     "about-us": {
@@ -92,7 +93,12 @@
       "connexion": "Inloggen",
       "my-account": "Mijn account",
       "sign-out": "Uitloggen"
-    }
+    },
+    "home": "Home",
+    "about": "Over",
+    "projects": "Projecten",
+    "contact": "Contact",
+    "categories": "Onze categorieën"
   },
   "about": {
     "start": {
@@ -123,5 +129,79 @@
       }
     },
     "conclusion": "Al onze diensten worden uitgevoerd volgens hoge professionele normen, met een focus op kwaliteit en op maat gemaakte oplossingen om de dromen van onze klanten om te zetten in concrete projecten."
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "name": "Naam",
+    "nameRequired": "Naam is verplicht.",
+    "email": "E-mail",
+    "emailRequired": "Een geldig e-mailadres is verplicht.",
+    "phone": "Telefoon",
+    "message": "Bericht",
+    "messageRequired": "Bericht is verplicht.",
+    "send": "Verzenden"
+  },
+  "signIn": {
+    "title": "Inloggen",
+    "email": "E-mail",
+    "emailRequired": "E-mail is verplicht.",
+    "invalidEmail": "Ongeldig e-mailformaat.",
+    "password": "Wachtwoord",
+    "passwordRequired": "Wachtwoord is verplicht.",
+    "passwordMinLength": "Wachtwoord moet minimaal 6 tekens bevatten.",
+    "signInButton": "INLOGGEN",
+    "signInWithFacebook": "Inloggen met Facebook",
+    "signInWithGoogle": "Inloggen met Google",
+    "facebookTooltip": "Inlogmethode nog niet beschikbaar",
+    "googleTooltip": "Inlogmethode nog niet beschikbaar"
+  },
+  "signUp": {
+    "title": "Nog geen account?",
+    "subtitle": "Meld je gratis aan en geniet van je voordelen.",
+    "firstname": "Voornaam",
+    "firstnamePlaceholder": "Doe",
+    "firstnameRequired": "Voornaam is verplicht.",
+    "firstnameMinLength": "Voornaam moet minimaal 3 tekens bevatten.",
+    "lastname": "Achternaam",
+    "lastnamePlaceholder": "John",
+    "lastnameRequired": "Achternaam is verplicht.",
+    "lastnameMinLength": "Achternaam moet minimaal 3 tekens bevatten.",
+    "street": "Straat",
+    "streetPlaceholder": "Straatnaam",
+    "streetRequired": "Straat is verplicht.",
+    "streetNumber": "Nummer",
+    "streetNumberPlaceholder": "Nummer",
+    "streetNumberRequired": "Nummer is verplicht.",
+    "postalCode": "Postcode",
+    "postalCodePlaceholder": "",
+    "postalCodeRequired": "Postcode is verplicht.",
+    "city": "Stad",
+    "cityPlaceholder": "",
+    "cityRequired": "Stad is verplicht.",
+    "country": "Land",
+    "countryPlaceholder": "Kies een land...",
+    "countryFrance": "Frankrijk",
+    "countryUS": "Verenigde Staten",
+    "countryGermany": "Duitsland",
+    "countryJapan": "Japan",
+    "countryRequired": "Land is verplicht.",
+    "email": "E-mail",
+    "emailPlaceholder": "naam@gmail.com",
+    "emailRequired": "E-mail is verplicht.",
+    "invalidEmail": "Ongeldig e-mailformaat.",
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Voer een wachtwoord in",
+    "passwordRequired": "Wachtwoord is verplicht.",
+    "passwordMinLength": "Wachtwoord moet minimaal 8 tekens bevatten.",
+    "passwordComplexity": "Wachtwoord moet minimaal één hoofdletter, één kleine letter en één cijfer bevatten.",
+    "confirmPassword": "Bevestig wachtwoord",
+    "confirmPasswordPlaceholder": "Bevestig je wachtwoord",
+    "confirmPasswordRequired": "Bevestiging van wachtwoord is verplicht.",
+    "passwordMismatch": "Wachtwoorden komen niet overeen.",
+    "loading": "Laden...",
+    "submitButton": "AANMELDEN"
+  },
+  "testimonials": {
+    "title": "Wat zeggen onze klanten?"
   }
 }

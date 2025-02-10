@@ -4,7 +4,8 @@
   "logout": "Déconnexion",
   "NAVBAR": {
     "LANG_EN": "Anglais",
-    "LANG_FR": "Français"
+    "LANG_FR": "Français",
+    "LANG_NL": "Néerlandais"
   },
   "home": {
     "about-us": {
@@ -92,7 +93,12 @@
       "connexion": "Se connecter",
       "my-account": "Ma page",
       "sign-out": "Déconnexion"
-    }
+    },
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact",
+    "categories": "Nos catégories"
   },
   "about": {
     "start": {
@@ -123,5 +129,79 @@
       }
     },
     "conclusion": "Tous nos services sont réalisés selon des normes élevées de professionnalisme, avec un accent sur la qualité et des solutions personnalisées pour transformer les rêves de nos clients en projets concrets."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "name": "Nom",
+    "nameRequired": "Nom est requis.",
+    "email": "Email",
+    "emailRequired": "Un email valide est requis.",
+    "phone": "Téléphone",
+    "message": "Message",
+    "messageRequired": "Message est requis.",
+    "send": "Envoyer"
+  },
+  "signIn": {
+    "title": "Se connecter",
+    "email": "Email",
+    "emailRequired": "Email est requis.",
+    "invalidEmail": "Format d'email invalide.",
+    "password": "Mot de passe",
+    "passwordRequired": "Mot de passe est requis.",
+    "passwordMinLength": "Le mot de passe doit comporter au moins 6 caractères.",
+    "signInButton": "SE CONNECTER",
+    "signInWithFacebook": "Se connecter avec Facebook",
+    "signInWithGoogle": "Se connecter avec Google",
+    "facebookTooltip": "Méthode de connexion pas encore disponible",
+    "googleTooltip": "Méthode de connexion pas encore disponible"
+  },
+  "signUp": {
+    "title": "Pas encore de compte ?",
+    "subtitle": "Inscrivez-vous gratuitement et bénéficiez de vos avantages.",
+    "firstname": "Nom",
+    "firstnamePlaceholder": "Doe",
+    "firstnameRequired": "Le nom est requis.",
+    "firstnameMinLength": "Le nom doit comporter au moins 3 caractères.",
+    "lastname": "Prénom",
+    "lastnamePlaceholder": "John",
+    "lastnameRequired": "Le prénom est requis.",
+    "lastnameMinLength": "Le prénom doit comporter au moins 3 caractères.",
+    "street": "Rue",
+    "streetPlaceholder": "Rue de la République",
+    "streetRequired": "La rue est requise.",
+    "streetNumber": "Numéro",
+    "streetNumberPlaceholder": "Numéro",
+    "streetNumberRequired": "Le numéro est requis.",
+    "postalCode": "Code Postal",
+    "postalCodePlaceholder": "",
+    "postalCodeRequired": "Le code postal est requis.",
+    "city": "Ville",
+    "cityPlaceholder": "",
+    "cityRequired": "La ville est requise.",
+    "country": "Pays",
+    "countryPlaceholder": "Choisissez un pays...",
+    "countryFrance": "France",
+    "countryUS": "États-Unis",
+    "countryGermany": "Allemagne",
+    "countryJapan": "Japon",
+    "countryRequired": "Le pays est requis.",
+    "email": "Email",
+    "emailPlaceholder": "name@gmail.com",
+    "emailRequired": "L'email est requis.",
+    "invalidEmail": "Format de l'email invalide.",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Entrez un mot de passe",
+    "passwordRequired": "Le mot de passe est requis.",
+    "passwordMinLength": "Le mot de passe doit comporter au moins 8 caractères.",
+    "passwordComplexity": "Le mot de passe doit contenir au moins une majuscule, une minuscule et un chiffre.",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "confirmPasswordRequired": "La confirmation du mot de passe est requise.",
+    "passwordMismatch": "Les mots de passe ne correspondent pas.",
+    "loading": "Chargement...",
+    "submitButton": "S'INSCRIRE"
+  },
+  "testimonials": {
+    "title": "Qu'en disent nos clients ?"
   }
 }
