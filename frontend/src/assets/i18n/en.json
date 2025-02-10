@@ -4,7 +4,8 @@
   "logout": "Logout",
   "NAVBAR": {
     "LANG_EN": "English",
-    "LANG_FR": "French"
+    "LANG_FR": "French",
+    "LANG_NL": "Dutch"
   },
   "home": {
     "about-us": {
@@ -92,7 +93,12 @@
       "connexion": "Sign in",
       "my-account": "My Account",
       "sign-out": "Sign out"
-    }
+    },
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "categories": "Our categories"
   },
   "about": {
     "start": {
@@ -123,5 +129,79 @@
       }
     },
     "conclusion": "All our services are carried out to high standards of professionalism, with a focus on quality and personalized solutions to turn our clients' dreams into concrete projects."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "nameRequired": "Name is required.",
+    "email": "Email",
+    "emailRequired": "A valid email is required.",
+    "phone": "Phone",
+    "message": "Message",
+    "messageRequired": "Message is required.",
+    "send": "Send"
+  },
+  "signIn": {
+    "title": "Sign In",
+    "email": "Email",
+    "emailRequired": "Email is required.",
+    "invalidEmail": "Invalid email format.",
+    "password": "Password",
+    "passwordRequired": "Password is required.",
+    "passwordMinLength": "Password must be at least 6 characters.",
+    "signInButton": "SIGN IN",
+    "signInWithFacebook": "Sign in with Facebook",
+    "signInWithGoogle": "Sign in with Google",
+    "facebookTooltip": "Sign-in method not yet available",
+    "googleTooltip": "Sign-in method not yet available"
+  },
+  "signUp": {
+    "title": "Don't have an account yet?",
+    "subtitle": "Sign up for free and enjoy your benefits.",
+    "firstname": "First Name",
+    "firstnamePlaceholder": "Doe",
+    "firstnameRequired": "First name is required.",
+    "firstnameMinLength": "First name must be at least 3 characters.",
+    "lastname": "Last Name",
+    "lastnamePlaceholder": "John",
+    "lastnameRequired": "Last name is required.",
+    "lastnameMinLength": "Last name must be at least 3 characters.",
+    "street": "Street",
+    "streetPlaceholder": "Street Name",
+    "streetRequired": "Street is required.",
+    "streetNumber": "Number",
+    "streetNumberPlaceholder": "Number",
+    "streetNumberRequired": "Number is required.",
+    "postalCode": "Postal Code",
+    "postalCodePlaceholder": "",
+    "postalCodeRequired": "Postal code is required.",
+    "city": "City",
+    "cityPlaceholder": "",
+    "cityRequired": "City is required.",
+    "country": "Country",
+    "countryPlaceholder": "Choose a country...",
+    "countryFrance": "France",
+    "countryUS": "United States",
+    "countryGermany": "Germany",
+    "countryJapan": "Japan",
+    "countryRequired": "Country is required.",
+    "email": "Email",
+    "emailPlaceholder": "name@gmail.com",
+    "emailRequired": "Email is required.",
+    "invalidEmail": "Invalid email format.",
+    "password": "Password",
+    "passwordPlaceholder": "Enter a password",
+    "passwordRequired": "Password is required.",
+    "passwordMinLength": "Password must be at least 8 characters.",
+    "passwordComplexity": "Password must contain at least one uppercase letter, one lowercase letter, and one number.",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "confirmPasswordRequired": "Password confirmation is required.",
+    "passwordMismatch": "Passwords do not match.",
+    "loading": "Loading...",
+    "submitButton": "SIGN UP"
+  },
+  "testimonials": {
+    "title": "What do our customers say?"
   }
 }

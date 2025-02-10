@@ -1,8 +1,6 @@
 <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="md:py-8">
-  <h2 class="text-2xl font-bold mb-6 text-primary">Pas encore de compte ?</h2>
-  <h2 class="text-xl font-semibold mb-6 text-green-darker">
-    Inscrivez-vous gratuitement et bénéficiez de vos avantages.
-  </h2>
+  <h2 class="text-2xl font-bold mb-6 text-primary">{{ 'signUp.title' | translate }}</h2>
+  <h2 class="text-xl font-semibold mb-6 text-green-darker">{{ 'signUp.subtitle' | translate }}</h2>
 
   <!-- NAME INFO -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
@@ -10,48 +8,42 @@
       <label
         for="firstname"
         class="block text-sm font-medium text-secondary mb-1"
-        >Nom</label
+        >{{ 'signUp.firstname' | translate }}</label
       >
       <input
         id="firstname"
         type="text"
         formControlName="firstname"
-        placeholder="Doe"
+        placeholder="{{ 'signUp.firstnamePlaceholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
       <div
         *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="firstname.errors?.['required']">Le nom est requis.</small>
-        <small *ngIf="firstname.errors?.['minlength']"
-          >Le nom doit comporter au moins 3 caractères.</small
-        >
+        <small *ngIf="firstname.errors?.['required']">{{ 'signUp.firstnameRequired' | translate }}</small>
+        <small *ngIf="firstname.errors?.['minlength']">{{ 'signUp.firstnameMinLength' | translate }}</small>
       </div>
     </div>
     <div>
       <label
         for="lastname"
         class="block text-sm font-medium text-secondary mb-1"
-        >Prénom</label
+        >{{ 'signUp.lastname' | translate }}</label
       >
       <input
         id="lastname"
         type="text"
         formControlName="lastname"
-        placeholder="John"
+        placeholder="{{ 'signUp.lastnamePlaceholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
       <div
         *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="lastname.errors?.['required']"
-          >Le prénom est requis.</small
-        >
-        <small *ngIf="lastname.errors?.['minlength']"
-          >Le prénom doit comporter au moins 3 caractères.</small
-        >
+        <small *ngIf="lastname.errors?.['required']">{{ 'signUp.lastnameRequired' | translate }}</small>
+        <small *ngIf="lastname.errors?.['minlength']">{{ 'signUp.lastnameMinLength' | translate }}</small>
       </div>
     </div>
   </div>
@@ -60,44 +52,40 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
     <div class="md:col-span-2">
       <label for="street" class="block text-sm font-medium text-secondary mb-1"
-        >Rue</label
+        >{{ 'signUp.street' | translate }}</label
       >
       <input
         id="street"
         type="text"
         formControlName="street"
-        placeholder="Rue de la République"
+        placeholder="{{ 'signUp.streetPlaceholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
       <div
         *ngIf="street.invalid && (street.dirty || street.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="street.errors?.['required']">La rue est requise.</small>
+        <small *ngIf="street.errors?.['required']">{{ 'signUp.streetRequired' | translate }}</small>
       </div>
     </div>
     <div>
       <label
         for="streetNumber"
         class="block text-sm font-medium text-secondary mb-1"
-        >Numéro</label
+        >{{ 'signUp.streetNumber' | translate }}</label
       >
       <input
         id="streetNumber"
         type="text"
         formControlName="streetNumber"
-        placeholder="Numéro"
+        placeholder="{{ 'signUp.streetNumberPlaceholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
       <div
-        *ngIf="
-          streetNumber.invalid && (streetNumber.dirty || streetNumber.touched)
-        "
+        *ngIf="streetNumber.invalid && (streetNumber.dirty || streetNumber.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="streetNumber.errors?.['required']"
-          >Le numéro est requis.</small
-        >
+        <small *ngIf="streetNumber.errors?.['required']">{{ 'signUp.streetNumberRequired' | translate }}</small>
       </div>
     </div>
   </div>
@@ -107,63 +95,61 @@
       <label
         for="postalCode"
         class="block text-sm font-medium text-secondary mb-1"
-        >Code Postal</label
+        >{{ 'signUp.postalCode' | translate }}</label
       >
       <input
         id="postalCode"
         type="text"
         formControlName="postalCode"
-        placeholder=""
+        placeholder="{{ 'signUp.postalCodePlaceholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
       <div
         *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="postalCode.errors?.['required']"
-          >Le code postal est requis.</small
-        >
+        <small *ngIf="postalCode.errors?.['required']">{{ 'signUp.postalCodeRequired' | translate }}</small>
       </div>
     </div>
     <div>
       <label for="city" class="block text-sm font-medium text-secondary mb-1"
-        >Ville</label
+        >{{ 'signUp.city' | translate }}</label
       >
       <input
         id="city"
         type="text"
         formControlName="city"
-        placeholder=""
+        placeholder="{{ 'signUp.cityPlaceholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
       <div
         *ngIf="city.invalid && (city.dirty || city.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="city.errors?.['required']">La ville est requise.</small>
+        <small *ngIf="city.errors?.['required']">{{ 'signUp.cityRequired' | translate }}</small>
       </div>
     </div>
     <div class="md:col-span-2">
       <label for="country" class="block text-sm font-medium text-secondary"
-        >Pays</label
+        >{{ 'signUp.country' | translate }}</label
       >
       <select
         id="country"
         formControlName="country"
         class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
       >
-        <option value="" disabled selected>Choisissez un pays...</option>
-        <option value="FR">France</option>
-        <option value="US">États-Unis</option>
-        <option value="DE">Allemagne</option>
-        <option value="JP">Japon</option>
+        <option value="" disabled selected>{{ 'signUp.countryPlaceholder' | translate }}</option>
+        <option value="FR">{{ 'signUp.countryFrance' | translate }}</option>
+        <option value="US">{{ 'signUp.countryUS' | translate }}</option>
+        <option value="DE">{{ 'signUp.countryGermany' | translate }}</option>
+        <option value="JP">{{ 'signUp.countryJapan' | translate }}</option>
         <!-- Add more countries as needed -->
       </select>
       <div
         *ngIf="country.invalid && (country.dirty || country.touched)"
         class="error text-red-500 text-sm mt-1"
       >
-        <small *ngIf="country.errors?.['required']">Le pays est requis.</small>
+        <small *ngIf="country.errors?.['required']">{{ 'signUp.countryRequired' | translate }}</small>
       </div>
     </div>
   </div>
@@ -171,49 +157,42 @@
   <!-- EMAIL AND PASSWORD -->
   <div class="form-group mb-4">
     <label for="email" class="block text-sm font-medium text-secondary mb-1"
-      >Email</label
+      >{{ 'signUp.email' | translate }}</label
     >
     <input
       id="email"
       type="email"
       formControlName="email"
-      placeholder="name@gmail.com"
+      placeholder="{{ 'signUp.emailPlaceholder' | translate }}"
       class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
     />
     <div
       *ngIf="email.invalid && (email.dirty || email.touched)"
       class="error text-red-500 text-sm mt-1"
     >
-      <small *ngIf="email.errors?.['required']">L'email est requis.</small>
-      <small *ngIf="email.errors?.['email']">Format de l'email invalide.</small>
+      <small *ngIf="email.errors?.['required']">{{ 'signUp.emailRequired' | translate }}</small>
+      <small *ngIf="email.errors?.['email']">{{ 'signUp.invalidEmail' | translate }}</small>
     </div>
   </div>
 
   <div class="form-group mb-4">
     <label for="password" class="block text-sm font-medium text-secondary mb-1"
-      >Mot de passe</label
+      >{{ 'signUp.password' | translate }}</label
     >
     <input
       id="password"
       type="password"
       formControlName="password"
-      placeholder="Entrez un mot de passe"
+      placeholder="{{ 'signUp.passwordPlaceholder' | translate }}"
       class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
     />
     <div
       *ngIf="password.invalid && (password.dirty || password.touched)"
       class="error text-red-500 text-sm mt-1"
     >
-      <small *ngIf="password.errors?.['required']"
-        >Le mot de passe est requis.</small
-      >
-      <small *ngIf="password.errors?.['minlength']"
-        >Le mot de passe doit comporter au moins 8 caractères.</small
-      >
-      <small *ngIf="password.errors?.['passwordComplexity']"
-        >Le mot de passe doit contenir au moins une majuscule, une minuscule et
-        un chiffre.</small
-      >
+      <small *ngIf="password.errors?.['required']">{{ 'signUp.passwordRequired' | translate }}</small>
+      <small *ngIf="password.errors?.['minlength']">{{ 'signUp.passwordMinLength' | translate }}</small>
+      <small *ngIf="password.errors?.['passwordComplexity']">{{ 'signUp.passwordComplexity' | translate }}</small>
     </div>
   </div>
 
@@ -221,28 +200,21 @@
     <label
       for="confirmPassword"
       class="block text-sm font-medium text-secondary mb-1"
-      >Confirmer le mot de passe</label
+      >{{ 'signUp.confirmPassword' | translate }}</label
     >
     <input
       id="confirmPassword"
       type="password"
       formControlName="confirmPassword"
-      placeholder="Confirmez votre mot de passe"
+      placeholder="{{ 'signUp.confirmPasswordPlaceholder' | translate }}"
       class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
     />
     <div
-      *ngIf="
-        confirmPassword.invalid &&
-        (confirmPassword.dirty || confirmPassword.touched)
-      "
+      *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)"
       class="error text-red-500 text-sm mt-1"
     >
-      <small *ngIf="confirmPassword.errors?.['required']"
-        >La confirmation du mot de passe est requise.</small
-      >
-      <small *ngIf="signUpForm.errors?.['passwordMismatch']"
-        >Les mots de passe ne correspondent pas.</small
-      >
+      <small *ngIf="confirmPassword.errors?.['required']">{{ 'signUp.confirmPasswordRequired' | translate }}</small>
+      <small *ngIf="signUpForm.errors?.['passwordMismatch']">{{ 'signUp.passwordMismatch' | translate }}</small>
     </div>
   </div>
 
@@ -252,6 +224,6 @@
     [disabled]="signUpForm.invalid || isSubmitting"
     class="w-full cursor-pointer text-white bg-green-darker hover:bg-green font-semibold rounded-lg text-sm px-5 py-2.5 mb-5"
   >
-    {{ isSubmitting ? "Chargement..." : "S'INSCRIRE" }}
+    {{ isSubmitting ? ( 'signUp.loading' | translate ) : ( 'signUp.submitButton' | translate ) }}
   </button>
 </form>
