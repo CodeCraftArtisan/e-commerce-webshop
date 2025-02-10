@@ -16,10 +16,10 @@
         <div
           class="max-w-sm bg-white border border-gray-200 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-1"
         >
-          <a [routerLink]="['/category', category.categoryId]">
+          <a [routerLink]="['/category', category.id]">
             <img
               class="rounded-t-lg object-cover"
-              [src]="category.image"
+              [src]="category.imageUrl"
               [alt]="category.name"
             />
             <div class="p-2">
