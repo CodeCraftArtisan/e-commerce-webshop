@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
+@CrossOrigin(origins = "https://codecraft-webshop-project.netlify.app")
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {
@@ -36,6 +37,13 @@ public class CategoryController {
         CategoryDTO createdCategory = categoryService.createCategory(categoryDTO);
         return new ResponseEntity<>(createdCategory, HttpStatus.CREATED);
     }
+
+    @PostMapping("/bulk")
+    public ResponseEntity<List<CategoryDTO>> createCategories(@RequestBody List<CategoryDTO> categoryDTOs) {
+        List<CategoryDTO> createdCategories = categoryService.createCategories(categoryDTOs);
+        return new ResponseEntity<>(createdCategories, HttpStatus.CREATED);
+    }
+
 
     @PutMapping("/{categoryId}")
     public ResponseEntity<CategoryDTO> updateCategory(

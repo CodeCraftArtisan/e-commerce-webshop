@@ -22,7 +22,7 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public List<ProductDTO> getAllProducts(String lang) {
+    public List<ProductDTO> getAllProducts() {
         return productRepository.findAll()
                 .stream()
                 .map(entityMapper ::convertProductToDTO)
@@ -30,7 +30,7 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public ProductDTO getProductById(UUID id, String lang) {
+    public ProductDTO getProductById(UUID id) {
         return productRepository.findById(id)
                 .map(entityMapper ::convertProductToDTO)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
@@ -42,6 +42,16 @@ public class ProductService {
         product = productRepository.save(product);
         return entityMapper.convertProductToDTO(product);
     }
+
+    public List<ProductDTO> createProducts(List<ProductDTO> productDTOs) {
+        return productRepository.saveAll(productDTOs.stream()
+                        .map(entityMapper::convertProductToEntity)
+                        .collect(Collectors.toList()))
+                .stream()
+                .map(entityMapper::convertProductToDTO)
+                .collect(Collectors.toList());
+    }
+
 
     @Transactional
     public ProductDTO updateProduct(UUID id, ProductDTO productDTO) {

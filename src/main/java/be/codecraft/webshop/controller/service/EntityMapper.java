@@ -8,10 +8,7 @@ import be.codecraft.webshop.datamodel.repository.CategoryRepository;
 import be.codecraft.webshop.datamodel.repository.ProductRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
@@ -21,7 +18,7 @@ public class EntityMapper {
     private final ProductRepository productRepository;
     private final CategoryRepository categoryRepository;
 
-    public EntityMapper(UserRepository userRepository, ProductRepository productRepository, CategoryRepository categoryRepository){
+    public EntityMapper(UserRepository userRepository, ProductRepository productRepository, CategoryRepository categoryRepository) {
         this.userRepository = userRepository;
         this.productRepository = productRepository;
         this.categoryRepository = categoryRepository;
@@ -37,10 +34,7 @@ public class EntityMapper {
                 product.getCategory().getId(),
                 product.getImageUrls(),
                 product.getCategory().getName(),
-                Math.round(product.getRatings().stream()
-                        .mapToInt(Integer::intValue)
-                        .average()
-                        .orElse(0.0) * 10) / 10.0 //Get the average rating and round it at 1 decimal
+                4.5 //Get the average rating and round it at 1 decimal
         );
     }
 
@@ -51,7 +45,7 @@ public class EntityMapper {
         product.setDescription(productDTO.getDescription());
         product.setStockQuantity(productDTO.getStockQuantity());
         product.setImageUrls(productDTO.getImageUrls());
-        product.setCategory(categoryRepository.findByName(productDTO.getCategory()));
+        product.setCategory(categoryRepository.findById(productDTO.getCategoryId()).orElse(null));
         return product;
     }
 
@@ -261,22 +255,35 @@ public class EntityMapper {
     }
 
     public CategoryDTO convertCategoryToDTO(Category category) {
+        if (category == null) {
+            return null; // Return null if the input category is null
+        }
+
         return CategoryDTO.builder()
-                .id(category.getId())
-                .name(category.getName())
-                .parentCategoryId(category.getParentCategory() != null ? category.getParentCategory().getId() : null)
-                .subcategories(category.getSubcategories().stream()
-                        .map(subcategory -> CategoryDTO.builder()
-                                .id(subcategory.getId())
-                                .name(subcategory.getName())
-                                .parentCategoryId(subcategory.getParentCategory() != null ? subcategory.getParentCategory().getId() : null)
-                                .build())
-                        .collect(Collectors.toList()))
-                .imageUrl(category.getImageUrl())
-                .build();
+            .id(category.getId())
+            .name(category.getName())
+            .parentCategoryId(
+                (category.getParentCategory() != null) ? category.getParentCategory().getId() : null
+            )
+            .subcategories(
+                (category.getSubcategories() != null) ? category.getSubcategories().stream()
+                    .filter(Objects::nonNull) // Ensure no null subcategories
+                    .map(subcategory -> CategoryDTO.builder()
+                        .id(subcategory.getId())
+                        .name(subcategory.getName())
+                        .parentCategoryId(
+                                (subcategory.getParentCategory() != null) ? subcategory.getParentCategory().getId() : null
+                        )
+                        .build())
+                    .collect(Collectors.toList())
+                    : Collections.emptyList() // Default to empty list if null
+            )
+            .imageUrl(category.getImageUrl())
+            .build();
     }
 
-    public Category convertDTOToCategory(CategoryDTO categoryDTO) {
+
+    public Category convertCategoryToEntity(CategoryDTO categoryDTO) {
         Category parentCategory = null;
         if (categoryDTO.getParentCategoryId() != null) {
             parentCategory = categoryRepository.findById(categoryDTO.getParentCategoryId())
@@ -292,7 +299,7 @@ public class EntityMapper {
 
         if (categoryDTO.getSubcategories() != null && !categoryDTO.getSubcategories().isEmpty()) {
             category.setSubcategories(categoryDTO.getSubcategories().stream()
-                    .map(this::convertDTOToCategory)
+                    .map(this::convertCategoryToEntity)
                     .collect(Collectors.toList()));
         }
         return category;

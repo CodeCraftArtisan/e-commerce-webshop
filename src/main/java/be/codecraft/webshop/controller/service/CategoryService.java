@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryService {
@@ -37,7 +38,7 @@ public class CategoryService {
 
     @Transactional
     public CategoryDTO createCategory(CategoryDTO categoryDTO) {
-        Category category = entityMapper.convertDTOToCategory(categoryDTO);
+        Category category = entityMapper.convertCategoryToEntity(categoryDTO);
 
         Category savedCategory = categoryRepository.save(category);
 
@@ -117,4 +118,14 @@ public class CategoryService {
                 .toList());
         return categoryDTO;
     }
+
+    public List<CategoryDTO> createCategories(List<CategoryDTO> categoryDTOs) {
+        return categoryRepository.saveAll(categoryDTOs.stream()
+                        .map(entityMapper::convertCategoryToEntity)
+                        .collect(Collectors.toList()))
+                .stream()
+                .map(entityMapper::convertCategoryToDTO)
+                .collect(Collectors.toList());
+    }
+
 }

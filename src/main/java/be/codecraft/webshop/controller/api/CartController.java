@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+@CrossOrigin(origins = "https://codecraft-webshop-project.netlify.app")
 @RestController
 @RequestMapping("/api/carts")
 public class CartController {

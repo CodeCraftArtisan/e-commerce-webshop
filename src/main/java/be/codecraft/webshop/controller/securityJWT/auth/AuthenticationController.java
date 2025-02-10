@@ -23,7 +23,6 @@ public class AuthenticationController {
         return ResponseEntity.ok(authenticationService.register(request));
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
@@ -31,7 +30,6 @@ public class AuthenticationController {
         return ResponseEntity.ok(authenticationService.authenticate(request));
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/logout")
     public ResponseEntity<String> logout(HttpServletRequest request) {
         logoutService.logout(request, null, null);
