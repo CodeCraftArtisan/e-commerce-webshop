@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CategoryService } from '../../shop/services/category.service';
 import { Category } from '../../types'; // Ensure you have this file with the correct type definition.
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categories-menu',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './categories-menu.component.html',
   styleUrl: './categories-menu.component.css',
 })
