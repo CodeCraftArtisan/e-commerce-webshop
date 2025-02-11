@@ -1,5 +1,3 @@
-<!-- *ngIf="isUserAuth()" -->
-
 <div>
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-10">
     <!-- Section Title -->
@@ -11,25 +9,36 @@
         </h2>
       </div>
     </div>
-    <div class="container grid grid-cols-2 lg:grid-cols-5 gap-8">
-      <div *ngFor="let category of categories">
-        <div
-          class="max-w-sm bg-white border border-gray-200 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-1"
-        >
-          <a [routerLink]="['/category', category.id]">
-            <img
-              class="rounded-t-lg object-cover"
-              [src]="category.imageUrl"
-              [alt]="category.name"
-            />
-            <div class="p-2">
-              <h5 class="mb-2 text-primary font-semibold tracking-tight">
-                {{ category.name }}
-              </h5>
-            </div>
-          </a>
+
+    <!-- Gestion du chargement et affichage conditionnel -->
+    <div *ngIf="categories && categories.length > 0; else noCategories">
+      <div
+        class="container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+      >
+        <div *ngFor="let category of categories" class="flex justify-center">
+          <div
+            class="max-w-xs w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transform transition-transform hover:-translate-y-1"
+          >
+            <a [routerLink]="['/category', category.id]" class="block">
+              <img
+                class="w-full h-40 object-cover rounded-t-lg"
+                [src]="category.imageUrl"
+                alt="{{ category.name }}"
+              />
+              <div class="p-3 text-center">
+                <h5 class="text-lg text-primary font-semibold">
+                  {{ category.name }}
+                </h5>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Message si aucune catégorie disponible -->
+    <ng-template #noCategories>
+      <p class="text-center text-gray-500 text-lg">Nothing to show</p>
+    </ng-template>
   </div>
 </div>
