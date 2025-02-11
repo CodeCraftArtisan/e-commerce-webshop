@@ -7,7 +7,7 @@ import { Review } from '../../types';
   providedIn: 'root',
 })
 export class ReviewService {
-  private apiUrl = 'https://e-commerce-webshop-render.orender.com/api/reviews';
+  private apiUrl = 'https://localost:8080/api/reviews';
 
   constructor(private http: HttpClient) {}
 
