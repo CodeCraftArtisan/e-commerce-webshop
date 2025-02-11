@@ -7,8 +7,8 @@ import { Observable, map } from 'rxjs';
 })
 export class AuthService {
   private http = inject(HttpClient);
-  private apiUrlAuth = 'https://e-commerce-webshop-render.orender.com/api/v1/auth/authenticate';
-  private apiUrlRegister = 'https://e-commerce-webshop-render.orender.com/api/v1/auth/register';
+  private apiUrlAuth = 'https://e-commerce-webshop-render.onrender.com/api/v1/auth/authenticate';
+  private apiUrlRegister = 'https://e-commerce-webshop-render.onrender.com/api/v1/auth/register';
 
   register(
     firstname: string,
