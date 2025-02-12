@@ -30,6 +30,7 @@ public class EntityMapper {
                 product.getName(),
                 product.getPrice(),
                 product.getDescription(),
+                product.getBrand(),
                 product.getStockQuantity(),
                 product.getCategory().getId(),
                 product.getImageUrls(),
@@ -43,6 +44,7 @@ public class EntityMapper {
         product.setName(productDTO.getName());
         product.setPrice(productDTO.getPrice());
         product.setDescription(productDTO.getDescription());
+        product.setBrand(productDTO.getBrand());
         product.setStockQuantity(productDTO.getStockQuantity());
         product.setImageUrls(productDTO.getImageUrls());
         product.setCategory(categoryRepository.findById(productDTO.getCategoryId()).orElse(null));
