@@ -37,6 +37,15 @@ public class ProductService {
     }
 
     @Transactional
+    public List<ProductDTO> getProductsByCategoryId(UUID categoryId) {
+        return productRepository.findByCategoryId(categoryId)
+                .stream()
+                .map(entityMapper::convertProductToDTO)
+                .collect(Collectors.toList());
+    }
+
+
+    @Transactional
     public ProductDTO createProduct(ProductDTO productDTO) {
         Product product = entityMapper.convertProductToEntity(productDTO);
         product = productRepository.save(product);
