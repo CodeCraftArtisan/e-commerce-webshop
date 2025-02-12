@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
+@CrossOrigin(origins = "https://codecraft-webshop-project.netlify.app")
 @RequiredArgsConstructor
 public class AuthenticationController {
 
@@ -34,6 +35,11 @@ public class AuthenticationController {
     public ResponseEntity<String> logout(HttpServletRequest request) {
         logoutService.logout(request, null, null);
         return ResponseEntity.ok("Logged out successfully");
+    }
+
+    @RequestMapping(method = RequestMethod.OPTIONS)
+    public ResponseEntity<?> handleOptions() {
+        return ResponseEntity.ok().build();
     }
 }
 

@@ -34,7 +34,7 @@ public class EntityMapper {
                 product.getCategory().getId(),
                 product.getImageUrls(),
                 product.getCategory().getName(),
-                4.5 //Get the average rating and round it at 1 decimal
+                4.5 //Get the average rating and round it at 1 decimal, for now hardcoded at 4.5
         );
     }
 
