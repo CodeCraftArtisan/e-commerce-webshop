@@ -7,10 +7,10 @@ import { Category } from '../../types'; // Import Category type
 import { Product } from '../../types';
 
 @Component({
-    selector: 'app-category-page-component',
-    imports: [CommonModule, RouterModule],
-    templateUrl: './category-page-component.component.html',
-    styleUrls: ['./category-page-component.component.css']
+  selector: 'app-category-page-component',
+  imports: [CommonModule, RouterModule],
+  templateUrl: './category-page-component.component.html',
+  styleUrls: ['./category-page-component.component.css'],
 })
 export class CategoryPageComponentComponent implements OnInit {
   products: Product[] = [];

@@ -29,9 +29,7 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe((categories) => {
-      console.log('Those are all the : ', categories);
       this.categories = categories; // Assignation des catégories
-      console.log('After assignment: ', this.categories); // Vérification après affectation
     });
   }
 
