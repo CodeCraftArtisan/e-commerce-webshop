@@ -1,6 +1,6 @@
 // Base URLs for different environments
-const BASE_URL = 'http://localhost:8080';
-const PROD_BASE_URL = 'https://e-commerce-webshop-render.orender.com/api/v1';
+const BASE_URL = 'http://localhost:8080/api';
+const PROD_BASE_URL = 'https://e-commerce-webshop-render.onrender.com/api/v1';
 
 export const API_ENDPOINTS = {
   categories: {
@@ -47,4 +47,19 @@ export const API_ENDPOINTS = {
     update: (id: string) => `${BASE_URL}/reviews/${id}`,
     delete: (id: string) => `${BASE_URL}/reviews/${id}`,
   },
+  auth: {
+    authenticate: `${BASE_URL}/auth/authenticate`,
+    register: `${BASE_URL}/auth/register`,
+
+    // For production:
+    authenticateProd: `${PROD_BASE_URL}/auth/authenticate`,
+    registerProd: `${PROD_BASE_URL}/auth/register`,
+  },
 };
+
+// Example commented URLs for clarity
+// Local development: http://localhost:8080/api/v1/auth/authenticate
+// Production: https://e-commerce-webshop-render.onrender.com/api/v1/auth/authenticate
+
+// Local development: http://localhost:8080/api/v1/auth/register
+// Production: https://e-commerce-webshop-render.onrender.com/api/v1/auth/register

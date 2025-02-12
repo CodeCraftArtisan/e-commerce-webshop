@@ -1,14 +1,16 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import { API_ENDPOINTS } from '../../constants/api_endpoints';
 
 @Injectable({
-  providedIn: 'root', // No need to add it to providers manually
+  providedIn: 'root',
 })
 export class AuthService {
   private http = inject(HttpClient);
-  private apiUrlAuth = 'https://e-commerce-webshop-render.onrender.com/api/v1/auth/authenticate';
-  private apiUrlRegister = 'https://e-commerce-webshop-render.onrender.com/api/v1/auth/register';
+
+  private apiUrlAuth = API_ENDPOINTS.auth.authenticate;
+  private apiUrlRegister = API_ENDPOINTS.auth.register;
 
   register(
     firstname: string,

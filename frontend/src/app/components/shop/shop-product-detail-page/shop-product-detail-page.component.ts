@@ -20,9 +20,10 @@ export class ShopProductDetailPageComponent implements OnInit {
   productId: string | null = null;
   product: Product | undefined;
   currentImageIndex: number = 0;
-  initialQuantity = 1;
+  initialQuantity = 1; // Default quantity to 1
   userEmail: string | null = null;
   isAuthenticated: boolean = false;
+  isLoading: boolean = false; // New state to track loading for addToCart
 
   constructor(
     private route: ActivatedRoute,
@@ -87,26 +88,40 @@ export class ShopProductDetailPageComponent implements OnInit {
    * Add the current product to the cart.
    */
   addToCart(): void {
-    if (this.product && this.product.id && this.isAuthenticated) {
-      const quantity = this.initialQuantity;
-
-      this.cartService
-        .addItemToCart(this.userEmail!, this.product.id, quantity)
-        .subscribe({
-          next: (updatedCart) => {
-            console.log('Product added to cart:', updatedCart);
-            alert('Product successfully added to the cart!');
-          },
-          error: (err: any) => {
-            console.error('Error adding product to cart:', err);
-            alert(
-              'Failed to add the product to the cart. Please try again later.'
-            );
-          },
-        });
-    } else {
-      alert('You must be logged in to add items to the cart.');
+    if (!this.product || !this.product.id) {
+      alert('Product details are missing.');
+      return;
     }
+
+    if (!this.isAuthenticated) {
+      alert('You must be logged in to add items to the cart.');
+      return;
+    }
+
+    const quantity = this.initialQuantity;
+
+    if (quantity <= 0) {
+      alert('Quantity must be greater than 0.');
+      return;
+    }
+
+    this.isLoading = true; // Set loading state
+    this.cartService
+      .addItemToCart(this.userEmail!, this.product.id, quantity)
+      .subscribe({
+        next: (updatedCart) => {
+          this.isLoading = false; // Reset loading state
+          console.log('Product added to cart:', updatedCart);
+          alert('Product successfully added to the cart!');
+        },
+        error: (err: any) => {
+          this.isLoading = false; // Reset loading state
+          console.error('Error adding product to cart:', err);
+          alert(
+            'Failed to add the product to the cart. Please try again later.'
+          );
+        },
+      });
   }
 
   /**
@@ -149,7 +164,10 @@ export class ShopProductDetailPageComponent implements OnInit {
    * @param newQuantity
    */
   onQuantityChange(newQuantity: number): void {
-    console.log('New Quantity:', newQuantity);
-    this.initialQuantity = newQuantity; // Update the initial quantity with the selected value
+    if (newQuantity > 0) {
+      this.initialQuantity = newQuantity; // Update the initial quantity with the selected value
+    } else {
+      console.warn('Invalid quantity selected:', newQuantity);
+    }
   }
 }
