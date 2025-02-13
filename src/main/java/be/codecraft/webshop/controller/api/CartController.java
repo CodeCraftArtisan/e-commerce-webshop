@@ -1,5 +1,6 @@
 package be.codecraft.webshop.controller.api;
 
+import be.codecraft.webshop.controller.securityJWT.model.CartRequest;
 import be.codecraft.webshop.datamodel.model.dto.CartDTO;
 import be.codecraft.webshop.controller.service.CartService;
 import org.springframework.http.HttpStatus;
@@ -30,12 +31,10 @@ public class CartController {
         }
     }
 
-    @PostMapping("/{email}/items")
-    public ResponseEntity<CartDTO> addItemToCart(@PathVariable String email,
-                                                 @RequestParam UUID productId,
-                                                 @RequestParam int quantity) {
+    @PostMapping("/items")
+    public ResponseEntity<CartDTO> addItemToCart(@RequestBody CartRequest newCartItem) {
         try {
-            CartDTO updatedCartDTO = cartService.addItemToCart(email, productId, quantity);
+            CartDTO updatedCartDTO = cartService.addItemToCart(newCartItem.getEmail(), newCartItem.getProductId(), newCartItem.getQuantity());
             return ResponseEntity.status(HttpStatus.CREATED).body(updatedCartDTO);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)

@@ -177,19 +177,6 @@ public class EntityMapper {
         return cart;
     }
 
-    public CartItem convertCartItemToEntity(CartItemDTO cartItemDTO) {
-        CartItem cartItem = new CartItem();
-        cartItem.setProductId(cartItemDTO.getProductId());
-        cartItem.setCartId(cartItemDTO.getCartId());
-
-        productRepository.findById(cartItemDTO.getProductId()).ifPresent(cartItem::setProduct);
-
-        cartItem.setQuantity(cartItemDTO.getQuantity());
-        cartItem.setPrice(cartItemDTO.getPrice());
-
-        return cartItem;
-    }
-
     public CartDTO convertCartToDTO(Cart cart) {
         List<CartItemDTO> itemDTOs = cart.getItems().stream()
                 .map(this::convertCartItemToDTO)
@@ -203,6 +190,19 @@ public class EntityMapper {
                 .build();
     }
 
+    public CartItem convertCartItemToEntity(CartItemDTO cartItemDTO) {
+        CartItem cartItem = new CartItem();
+        cartItem.setProductId(cartItemDTO.getProductId());
+        cartItem.setCartId(cartItemDTO.getCartId());
+
+        productRepository.findById(cartItemDTO.getProductId()).ifPresent(cartItem::setProduct);
+
+        cartItem.setQuantity(cartItemDTO.getQuantity());
+        cartItem.setPrice(cartItemDTO.getPrice());
+
+        return cartItem;
+    }
+
     private CartItemDTO convertCartItemToDTO(CartItem cartItem) {
         return CartItemDTO.builder()
                 .productId(cartItem.getProductId())
@@ -211,6 +211,7 @@ public class EntityMapper {
                 .productPrice(cartItem.getProduct().getPrice())
                 .quantity(cartItem.getQuantity())
                 .price(cartItem.getPrice())
+                .imageUrls(cartItem.getProduct().getImageUrls())
                 .build();
     }
 

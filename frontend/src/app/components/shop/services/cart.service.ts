@@ -20,8 +20,10 @@ export class CartService {
     productId: string,
     quantity: number
   ): Observable<Cart> {
-    const body = { productId, quantity };
-    return this.http.post<Cart>(API_ENDPOINTS.carts.addItem(email), body);
+    console.log("email: " + email + " productId: " + productId + " quantity: " + quantity)
+    console.log(API_ENDPOINTS.carts.addItem)
+    const body = { email, productId, quantity };
+    return this.http.post<Cart>(API_ENDPOINTS.carts.addItem, body);
   }
 
   // Remove an item from the cart
