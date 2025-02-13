@@ -3,11 +3,12 @@ import { CartService } from '../shop/services/cart.service';
 import { Cart, CartItems } from '../../components/types';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../shop/services/auth.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-cart',
+  selector: 'cart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
@@ -15,6 +16,7 @@ export class CartComponent implements OnInit {
   cart: Cart | null = null;
   total: number = 0;
   userEmail: string | null = null;
+  isCartLoading: boolean = false;
   constructor(
     private cartService: CartService,
     private authService: AuthService
@@ -36,13 +38,14 @@ export class CartComponent implements OnInit {
     if (!this.userEmail) return;
 
     this.cartService.getCartByUserEmail(this.userEmail).subscribe({
-      next: (cart) => {
-        this.cart = cart;
-        this.calculateTotal();
+      next: (cartData) => {
+        this.cart = cartData;
+        this.isCartLoading = false;
       },
-      error: (err) => {
-        console.error('Error loading cart:', err);
-        this.cart = null; // Reset cart on failure
+      error: (error) => {
+        console.error('Error fetching cart:', error);
+        console.error('Failed to load the cart. Please try again.');
+        this.isCartLoading = false;
       },
     });
   }
