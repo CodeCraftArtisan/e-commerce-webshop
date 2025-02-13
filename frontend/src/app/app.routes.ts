@@ -10,6 +10,7 @@ import { AuthenticateComponent } from './components/authenticate/authenticate.co
 import { CategoryPageComponentComponent } from './components/shop/category-page-component/category-page-component.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CategoriesComponent } from './components/home/categories/categories.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,4 +24,5 @@ export const routes: Routes = [
   { path: 'category/:categoryId', component: CategoryPageComponentComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'categories', component: CategoriesComponent },
 ];
