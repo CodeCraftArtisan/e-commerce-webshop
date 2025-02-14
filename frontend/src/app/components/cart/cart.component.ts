@@ -4,11 +4,12 @@ import { Cart, CartItems } from '../../components/types';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../shop/services/auth.service';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'cart',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })

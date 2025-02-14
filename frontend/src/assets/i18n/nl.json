@@ -202,6 +202,53 @@
     "submitButton": "AANMELDEN"
   },
   "testimonials": {
-    "title": "Wat zeggen onze klanten?"
+    "title": "Wat zeggen onze klanten?",
+    "list": [
+      {
+        "name": "John Doe",
+        "location": "New York, NY",
+        "feedback": "Geweldige producten! De kwaliteit is top en de levering was snel."
+      },
+      {
+        "name": "Jane Smith",
+        "location": "Los Angeles, CA",
+        "feedback": "Ik ben helemaal weg van mijn nieuwe draadloze koptelefoon! De geluidskwaliteit is ongelooflijk."
+      },
+      {
+        "name": "Sam Wilson",
+        "location": "Chicago, IL",
+        "feedback": "Geweldige klantenservice en snelle verzending. Ik raad deze winkel ten zeerste aan!"
+      },
+      {
+        "name": "Sarah Lee",
+        "location": "San Francisco, CA",
+        "feedback": "Het horloge dat ik heb gekocht werkt perfect en was eenvoudig in te stellen. Bedankt!"
+      }
+    ]
+  },
+  "checkout": {
+    "order-summary": "Bestellingsoverzicht",
+    "billing-delivery-info": "Facturatie- en leveringsinformatie",
+    "shipping-address": "Verzendadres",
+    "edit": "Bewerken",
+    "no-address": "Geen adres gevonden. Voeg een adres toe in uw profiel.",
+    "total": "Totaal",
+    "return-to-shopping": "Terug naar winkelen",
+    "place-order": "Bestelling plaatsen",
+    "success": {
+      "title": "Bedankt voor uw vertrouwen!",
+      "message": "Uw bestelling wordt voorbereid en zal binnenkort bij u aankomen.",
+      "return-home": "Terug naar huis"
+    }
+  },
+  "cart": {
+    "title": "Winkelwagen",
+    "loading": "Uw winkelwagen wordt geladen...",
+    "remove": "Verwijderen",
+    "order-summary": "Bestellingsoverzicht",
+    "total": "Totaal",
+    "proceed-to-checkout": "Ga naar de kassa",
+    "empty": "Uw winkelwagen is leeg.",
+    "back-to-shopping": "Terug naar winkelen"
   }
 }

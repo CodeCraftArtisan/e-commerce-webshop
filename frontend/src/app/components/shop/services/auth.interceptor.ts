@@ -1,13 +1,25 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // Vérifier si nous sommes dans l'environnement du navigateur
   if (typeof window !== 'undefined' && window.localStorage) {
     const token = localStorage.getItem('authToken');
 
-    // Ajouter l'en-tête Authorization uniquement si le jeton existe
+    // Si un token existe, vérifier s'il est expiré
     if (token) {
-      // Vérification que la requête nécessite l'authentification (par exemple, si l'URL contient '/api')
+      const authService = new AuthService();
+      if (authService.isTokenExpired()) {
+        authService.removeToken();
+
+        const router = new Router();
+        router.navigate(['/login']);
+
+        return next(req);
+      }
+
+      // If the token is valid, attach it to the request as Authorization header
       if (req.url.includes('/authentication')) {
         const cloned = req.clone({
           setHeaders: {

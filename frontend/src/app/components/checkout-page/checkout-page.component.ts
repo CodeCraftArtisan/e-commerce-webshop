@@ -5,15 +5,15 @@ import { AuthService } from '../shop/services/auth.service';
 import { AddressService } from '../shop/services/address.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'checkout-page',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './checkout-page.component.html',
-  styleUrl: './checkout-page.component.css'
+  styleUrl: './checkout-page.component.css',
 })
-export class CheckoutPageComponent implements OnInit{
-
+export class CheckoutPageComponent implements OnInit {
   cart: Cart | null = null;
   userEmail: string | null = null;
   isCartLoading: boolean = false;
@@ -54,14 +54,12 @@ export class CheckoutPageComponent implements OnInit{
     });
   }
 
-  loadAddress(): void{
-  
+  loadAddress(): void {
     if (!this.userEmail) return;
-
 
     this.addressService.getAddressByUserEmail(this.userEmail).subscribe({
       next: (addressData) => {
-        console.log("address: " + addressData)
+        console.log('address: ' + addressData);
         this.address = addressData;
         this.isAddressLoading = true;
       },
@@ -71,10 +69,5 @@ export class CheckoutPageComponent implements OnInit{
         this.isAddressLoading = false;
       },
     });
-
   }
-
-
-
-
 }

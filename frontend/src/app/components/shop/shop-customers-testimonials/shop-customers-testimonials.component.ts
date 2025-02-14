@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  TranslateModule,
+  TranslateService,
+  LangChangeEvent,
+} from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'shop-customers-testimonials',
@@ -8,38 +13,46 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './shop-customers-testimonials.component.html',
   styleUrl: './shop-customers-testimonials.component.css',
 })
-export class ShopCustomersTestimonialsComponent {
-  testimonials = [
-    {
-      id: 1,
-      name: 'John Doe',
-      location: 'New York, NY',
-      feedback:
-        'Amazing products! The quality is top-notch, and the delivery was quick.',
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      location: 'Los Angeles, CA',
-      feedback:
-        'I absolutely love my new wireless headphones! The sound quality is incredible.',
-    },
-    {
-      id: 3,
-      name: 'Sam Wilson',
-      location: 'Chicago, IL',
-      feedback:
-        'Great customer service and fast shipping. Highly recommend this store!',
-    },
-    {
-      id: 4,
-      name: 'Sarah Lee',
-      location: 'San Francisco, CA',
-      feedback:
-        'The smartwatch I bought works perfectly and was easy to set up. Thank you!',
-    },
-  ];
+export class ShopCustomersTestimonialsComponent implements OnInit, OnDestroy {
+  testimonials: any[] = [];
+  private langChangeSubscription!: Subscription;
 
+  constructor(private translate: TranslateService) {}
+
+  /**
+   * Initialize the component and load translations.
+   */
+  ngOnInit() {
+    this.loadTranslations();
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(
+      (event: LangChangeEvent) => {
+        this.loadTranslations();
+      }
+    );
+  }
+
+  /**
+   * Clean up the subscription when the component is destroyed.
+   */
+  ngOnDestroy() {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
+
+  /**
+   * Load translations for the testimonials.
+   */
+  private loadTranslations() {
+    this.translate.get('testimonials.list').subscribe((translations) => {
+      this.testimonials = translations;
+    });
+  }
+
+  /**
+   * Handle the view details action for a testimonial.
+   * @param testimonialId - The ID of the testimonial to view details for.
+   */
   onViewDetails(testimonialId: number) {
     console.log(`View Details clicked for testimonial ID: ${testimonialId}`);
     // Logic for navigating to testimonial details can be added here

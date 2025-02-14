@@ -1,50 +1,87 @@
 <section class="bg-white py-8 px-4 antialiased lg:py-10">
   <div class="mx-auto max-w-screen-xl px-4">
     <h2 class="text-xl font-semibold text-primary dark:text-white sm:text-2xl">
-      Shopping Cart
+      {{ "cart.title" | translate }}
     </h2>
 
     <!-- Loading State -->
     <div *ngIf="isCartLoading" class="text-center py-10">
-      <p class="text-gray-500 dark:text-gray-400">Loading your cart...</p>
+      <p class="text-gray-500 dark:text-gray-400">
+        {{ "cart.loading" | translate }}
+      </p>
     </div>
 
     <!-- Cart Items -->
-    <div *ngIf="!isCartLoading && cart && cart.items.length > 0; else emptyCart" 
-         class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+    <div
+      *ngIf="!isCartLoading && cart && cart.items.length > 0; else emptyCart"
+      class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8"
+    >
       <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
         <div class="space-y-6">
-          <div *ngFor="let item of cart.items" 
-               class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
-            <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
-              
+          <div
+            *ngFor="let item of cart.items"
+            class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6"
+          >
+            <div
+              class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
+            >
               <!-- Product Image -->
               <a href="#" class="shrink-0 md:order-1">
-                <img *ngIf="item.imageUrls.length > 0" 
-                     class="h-20 w-20 dark:hidden" 
-                     [src]="item.imageUrls[0]" 
-                     alt="Product image" />
+                <img
+                  *ngIf="item.imageUrls.length > 0"
+                  class="h-20 w-20 dark:hidden"
+                  [src]="item.imageUrls[0]"
+                  alt="Product image"
+                />
               </a>
 
               <!-- Quantity Controls -->
-              <div class="flex items-center justify-between md:order-3 md:justify-end">
+              <div
+                class="flex items-center justify-between md:order-3 md:justify-end"
+              >
                 <div class="flex items-center">
-                  <button (click)="updateQuantity(item, item.quantity - 1)"
-                          class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-                    <svg class="h-2.5 w-2.5 text-gray-900 dark:text-white" 
-                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M1 1h16"/>
+                  <button
+                    (click)="updateQuantity(item, item.quantity - 1)"
+                    class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
+                  >
+                    <svg
+                      class="h-2.5 w-2.5 text-gray-900 dark:text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 18 2"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M1 1h16"
+                      />
                     </svg>
                   </button>
 
-                  <input type="text" class="w-10 text-center text-sm font-medium text-gray-900 dark:text-white" 
-                         [value]="item.quantity" readonly />
+                  <input
+                    type="text"
+                    class="w-10 text-center text-sm font-medium text-gray-900 dark:text-white"
+                    [value]="item.quantity"
+                    readonly
+                  />
 
-                  <button (click)="updateQuantity(item, item.quantity + 1)"
-                          class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-                    <svg class="h-2.5 w-2.5 text-gray-900 dark:text-white" 
-                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                  <button
+                    (click)="updateQuantity(item, item.quantity + 1)"
+                    class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
+                  >
+                    <svg
+                      class="h-2.5 w-2.5 text-gray-900 dark:text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 18 18"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M9 1v16M1 9h16"
+                      />
                     </svg>
                   </button>
                 </div>
@@ -56,18 +93,34 @@
               </div>
 
               <!-- Product Info -->
-              <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
-                <a href="#" class="text-base font-medium text-gray-900 hover:underline dark:text-white">
+              <div
+                class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md"
+              >
+                <a
+                  href="#"
+                  class="text-base font-medium text-gray-900 hover:underline dark:text-white"
+                >
                   {{ item.productName }}
                 </a>
                 <div class="flex items-center">
-                  <button (click)="removeItem(item)"
-                          class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500">
-                    <svg class="me-1.5 h-5 w-5" 
-                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                  <button
+                    (click)="removeItem(item)"
+                    class="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
+                  >
+                    <svg
+                      class="me-1.5 h-5 w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M6 18 17.94 6M18 18 6.06 6"
+                      />
                     </svg>
-                    Remove
+                    {{ "cart.remove" | translate }}
                   </button>
                 </div>
               </div>
@@ -78,17 +131,28 @@
 
       <!-- Order Summary -->
       <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-        <div class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
+        <div
+          class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6"
+        >
           <p class="text-xl font-semibold text-gray-900 dark:text-white">
-            Order Summary
+            {{ "cart.order-summary" | translate }}
           </p>
-          <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700">
-            <dt class="text-base font-bold text-gray-900 dark:text-white">Total</dt>
-            <dd class="text-base font-bold text-gray-900 dark:text-white">${{ cart.totalPrice }}</dd>
+          <dl
+            class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 dark:border-gray-700"
+          >
+            <dt class="text-base font-bold text-gray-900 dark:text-white">
+              {{ "cart.total" | translate }}
+            </dt>
+            <dd class="text-base font-bold text-gray-900 dark:text-white">
+              ${{ cart.totalPrice }}
+            </dd>
           </dl>
 
-          <a routerLink="/checkout" class="flex w-full items-center justify-center rounded-lg bg-green-darker hover:bg-green px-5 py-2.5 text-sm font-medium text-white">
-            Proceed to Checkout
+          <a
+            routerLink="/checkout"
+            class="flex w-full items-center justify-center rounded-lg bg-green-darker hover:bg-green px-5 py-2.5 text-sm font-medium text-white"
+          >
+            {{ "cart.proceed-to-checkout" | translate }}
           </a>
         </div>
       </div>
@@ -97,9 +161,32 @@
     <!-- Empty Cart State -->
     <ng-template #emptyCart>
       <div class="text-center py-10">
-        <p class="text-gray-500 dark:text-gray-400">Your cart is empty.</p>
-        <a href="#" class="text-primary-700 underline dark:text-primary-500">
-          Continue Shopping
+        <div class="object-cover w-64 h-64 mx-auto mb-6">
+          <img src="../../../assets/images/question.jpg" alt="" />
+        </div>
+        <p class="text-primary dark:text-gray-400">
+          {{ "cart.empty" | translate }}
+        </p>
+        <a
+          routerLink="/about-us"
+          class="font-medium text-base mt-5 inline-flex items-center nav-link"
+        >
+          {{ "cart.back-to-shopping" | translate }}
+          <svg
+            class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
         </a>
       </div>
     </ng-template>
