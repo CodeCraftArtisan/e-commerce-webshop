@@ -10,6 +10,7 @@ import { AuthenticateComponent } from './components/authenticate/authenticate.co
 import { CategoryPageComponentComponent } from './components/shop/category-page-component/category-page-component.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CategoriesComponent } from './components/home/categories/categories.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { CheckoutSuccessPageComponent } from './components/checkout-success-page/checkout-success-page.component';
 
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'category/:categoryId', component: CategoryPageComponentComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'categories', component: CategoriesComponent },
   { path: 'checkout', component: CheckoutPageComponent},
   { path: 'checkout-success', component: CheckoutSuccessPageComponent}
 ];

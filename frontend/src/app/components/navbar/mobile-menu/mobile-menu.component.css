@@ -17,3 +17,17 @@
 .nav-link:hover::after {
   width: 100%;
 }
+
+/* Transition pour l'opacité du fond */
+div[role="overlay"] {
+  transition: opacity 0.3s ease;
+}
+
+/* Sidebar animations */
+aside {
+  transition: transform 0.3s ease-in-out;
+}
+
+aside.closed {
+  transform: translateX(100%);
+}

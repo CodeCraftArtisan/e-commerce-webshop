@@ -1,16 +1,24 @@
 <!-- Barre supérieure avec le menu de langue -->
-<nav class="bg-black">
-  <div class="flex justify-end items-center mx-auto max-w-screen-xl px-4">
+<nav class="bg-black h-[5vh]">
+  <div
+    class="flex justify-end items-center mx-auto max-w-screen-xl px-4 h-full"
+  >
     <app-language-menu></app-language-menu>
   </div>
 </nav>
 
 <!-- Barre principale avec logo, menu mobile et user menu -->
-<nav class="bg-itemsBg">
+<nav
+  class="h-[15vh] sticky top-0 w-full z-40 transition-colors duration-300"
+  [ngClass]="{
+    'bg-scrolled hover:bg-initialColor': isScrolled,
+    'bg-initialColor': !isScrolled
+  }"
+>
   <div
-    class="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative"
+    class="max-w-screen-xl flex items-center justify-between mx-auto px-4 relative h-full"
   >
-    <!-- Logo à gauche -->
+    <!-- Logo -->
     <a routerLink="/" class="flex items-center">
       <img
         src="assets/images/logo-transparent-png.png"
@@ -20,7 +28,7 @@
     </a>
 
     <div class="flex justify-between items-center gap-5">
-      <!-- Cart Button first on smaller screens -->
+      <!-- Cart Button -->
       <button class="flex items-center justify-center order-1 md:order-3">
         <a routerLink="/cart">
           <svg
@@ -40,10 +48,10 @@
         </a>
       </button>
 
-      <!-- User Menu second on both sizes, but will be in its original position on large screens -->
+      <!-- User Menu -->
       <app-user-menu class="order-2 md:order-2"></app-user-menu>
 
-      <!-- Mobile Menu last on larger screens, first on smaller screens -->
+      <!-- Mobile Menu -->
       <app-mobile-menu class="order-3 md:order-1"></app-mobile-menu>
     </div>
   </div>

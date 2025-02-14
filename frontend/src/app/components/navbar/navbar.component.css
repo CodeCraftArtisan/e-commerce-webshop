@@ -1,0 +1,15 @@
+.bg-initialColor {
+  background-color: #f5f5f5;
+}
+
+.bg-scrolled {
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
+.hover\:bg-initialColor:hover {
+  background-color: #f5f5f5;
+}
+
+nav {
+  transition: background-color 0.2s ease;
+}

@@ -1,5 +1,5 @@
 <div>
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-10">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-12">
     <!-- Section Title -->
     <div class="flex items-center mb-14">
       <div class="w-2 h-10 bg-green-darker mr-4"></div>
@@ -13,20 +13,25 @@
     <!-- Gestion du chargement et affichage conditionnel -->
     <div *ngIf="categories && categories.length > 0; else noCategories">
       <div
-        class="container grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
       >
         <div *ngFor="let category of categories" class="flex justify-center">
           <div
             class="max-w-xs w-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transform transition-transform hover:-translate-y-1"
           >
-            <a [routerLink]="['/category', category.id]" class="block">
+            <a [routerLink]="['/category', category.id]" class="block h-full">
               <img
                 class="w-full h-40 object-cover rounded-t-lg"
                 [src]="category.imageUrl"
                 alt="{{ category.name }}"
               />
-              <div class="p-3 text-center">
-                <h5 class="text-lg text-primary font-semibold">
+              <div
+                class="p-3 text-center flex flex-col justify-center items-center h-20"
+              >
+                <!-- Updated h5 -->
+                <h5
+                  class="text-base sm:text-lg lg:text-xl text-primary font-semibold flex items-center justify-center h-full text-center leading-tight"
+                >
                   {{ category.name }}
                 </h5>
               </div>
