@@ -89,11 +89,12 @@ export class AuthService {
   }
 
   getUserEmail(): string | null {
+    console.log("get user email")
     const token = this.getToken();
     if (token) {
       try {
         const payload = JSON.parse(atob(token.split('.')[1])); // Decode JWT payload
-        return payload.email || null;
+        return payload.sub || null;
       } catch (e) {
         console.error('Error decoding token:', e);
         return null;

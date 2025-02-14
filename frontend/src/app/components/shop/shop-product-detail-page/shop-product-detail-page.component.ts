@@ -37,7 +37,9 @@ export class ShopProductDetailPageComponent implements OnInit {
   ngOnInit(): void {
     // Fetch the logged-in user's email directly
     const email = this.authService.getUserEmail();
-    if (email) {
+    if (this.authService.isUserAuthenticated()) {
+      console.log("shop prod detail page init ")
+      console.log("User email: " + this.authService.getUserEmail())
       this.userEmail = email;
       this.isAuthenticated = true;
     } else {
@@ -169,5 +171,9 @@ export class ShopProductDetailPageComponent implements OnInit {
     } else {
       console.warn('Invalid quantity selected:', newQuantity);
     }
+  }
+
+  isUserAuth(): boolean {
+    return this.authService.isUserAuthenticated();
   }
 }

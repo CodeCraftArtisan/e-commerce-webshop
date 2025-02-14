@@ -33,6 +33,7 @@ export interface CartItems {
   productPrice: number;
   quantity: number;
   price: number;
+  imageUrls: string[];
 }
 
 export interface Order {

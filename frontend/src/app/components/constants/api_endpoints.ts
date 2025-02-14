@@ -14,7 +14,7 @@ export const API_ENDPOINTS = {
   },
   carts: {
     getByUserEmail: (email: string) => `${BASE_URL}/carts/${email}`,
-    addItem: (email: string) => `${BASE_URL}/carts/${email}`,
+    addItem: `${BASE_URL}/carts/items`,
     removeItem: (email: string, itemId: string) =>
       `${BASE_URL}/carts/${email}/${itemId}`,
     clearCart: (email: string) => `${BASE_URL}/carts/${email}`,
@@ -48,7 +48,7 @@ export const API_ENDPOINTS = {
     delete: (id: string) => `${BASE_URL}/reviews/${id}`,
   },
   auth: {
-    authenticate: `${BASE_URL}/auth/authenticate`,
+    authenticate: `${BASE_URL}/v1/auth/authenticate`,
     register: `${BASE_URL}/auth/register`,
 
     // For production:
