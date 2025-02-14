@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { Observable, map, BehaviorSubject } from 'rxjs';
 import { API_ENDPOINTS } from '../../constants/api_endpoints';
 
 @Injectable({
@@ -11,6 +11,12 @@ export class AuthService {
 
   private apiUrlAuth = API_ENDPOINTS.auth.authenticate;
   private apiUrlRegister = API_ENDPOINTS.auth.register;
+
+  // Define BehaviorSubject to track user authentication status
+  private authSubject = new BehaviorSubject<boolean>(
+    this.isUserAuthenticated()
+  );
+  public authStatus$ = this.authSubject.asObservable(); // Expose this observable to other components
 
   register(
     firstname: string,
@@ -43,6 +49,7 @@ export class AuthService {
         map((response) => {
           if (response && response.token) {
             localStorage.setItem('authToken', response.token);
+            this.authSubject.next(true);
             return response.token;
           } else {
             throw new Error('No token received');
@@ -52,7 +59,6 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    // Check if we are in the browser environment (ensure `window` is available)
     if (typeof window !== 'undefined' && window.localStorage) {
       return localStorage.getItem('authToken');
     }
@@ -60,16 +66,31 @@ export class AuthService {
   }
 
   removeToken(): void {
-    // Check if we are in the browser environment (ensure `window` is available)
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.removeItem('authToken');
+      this.authSubject.next(false);
     }
   }
 
   saveToken(token: string): void {
-    // Check if we are in the browser environment (ensure `window` is available)
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.setItem('authToken', token);
+      this.authSubject.next(true);
+    }
+  }
+
+  isTokenExpired(): boolean {
+    const token = this.getToken();
+    if (!token) {
+      return true;
+    }
+
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return Date.now() >= payload.exp * 1000; // If current time is greater than expiry, return true
+    } catch (e) {
+      console.error('Error decoding token:', e);
+      return true; // If decoding fails, treat as expired
     }
   }
 
@@ -89,7 +110,7 @@ export class AuthService {
   }
 
   getUserEmail(): string | null {
-    console.log("get user email")
+    console.log('get user email');
     const token = this.getToken();
     if (token) {
       try {

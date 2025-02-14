@@ -202,6 +202,53 @@
     "submitButton": "SIGN UP"
   },
   "testimonials": {
-    "title": "What do our customers say?"
+    "title": "What do our customers say?",
+    "list": [
+      {
+        "name": "John Doe",
+        "location": "New York, NY",
+        "feedback": "The construction materials are of exceptional quality! Delivery was quick and the team was very professional."
+      },
+      {
+        "name": "Jane Smith",
+        "location": "Los Angeles, CA",
+        "feedback": "I bought construction tools and the quality is spot on. Very satisfied with the products, highly recommend!"
+      },
+      {
+        "name": "Sam Wilson",
+        "location": "Chicago, IL",
+        "feedback": "Excellent experience with construction material supply. The customer service is great and the delivery was on time. A trusted partner."
+      },
+      {
+        "name": "Sarah Lee",
+        "location": "San Francisco, CA",
+        "feedback": "The construction equipment I purchased is perfect for my site. Easy to use and very durable. Thanks for the quality!"
+      }
+    ]
+  },
+  "checkout": {
+    "order-summary": "Order Summary",
+    "billing-delivery-info": "Billing & Delivery Information",
+    "shipping-address": "Shipping Address",
+    "edit": "Edit",
+    "no-address": "No address found. Please add an address in your profile.",
+    "total": "Total",
+    "return-to-shopping": "Return to Shopping",
+    "place-order": "Place Order",
+    "success": {
+      "title": "Thank you for your trust!",
+      "message": "Your order is being prepared and will arrive soon.",
+      "return-home": "Return to home"
+    }
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "loading": "Loading your cart...",
+    "remove": "Remove",
+    "order-summary": "Order Summary",
+    "total": "Total",
+    "proceed-to-checkout": "Proceed to Checkout",
+    "empty": "Your cart is empty.",
+    "back-to-shopping": "Back to Shopping"
   }
 }

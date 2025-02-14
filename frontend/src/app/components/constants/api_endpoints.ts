@@ -49,7 +49,7 @@ export const API_ENDPOINTS = {
   },
   auth: {
     authenticate: `${BASE_URL}/v1/auth/authenticate`,
-    register: `${BASE_URL}/auth/register`,
+    register: `${BASE_URL}/v1/auth/register`,
 
     // For production:
     authenticateProd: `${PROD_BASE_URL}/auth/authenticate`,

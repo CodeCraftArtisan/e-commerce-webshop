@@ -1,21 +1,17 @@
 <div
-  class="rounded-t-3xl bg-itemsBg min-h-[70vh] flex justify-center items-center"
+  class="rounded-t-3xl bg-itemsBg min-h-[70vh] flex justify-center items-center h-full"
 >
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-10">
+  <div class="w-full px-4 py-8 mx-auto lg:py-16">
     <!-- Responsive Title -->
     <h2
-      class="text-primary text-2xl sm:text-3xl md:text-4xl font-semibold text-center italic mb-12 md:mb-16 lg:mb-20"
+      class="text-primary text-2xl sm:text-3xl md:text-4xl font-semibold text-center italic mb-7"
     >
       {{ "testimonials.title" | translate }}
     </h2>
     <!-- Responsive Grid Layout -->
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10"
-    >
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
       <div *ngFor="let testimonial of testimonials">
-        <figure
-          class="max-w-sm mx-auto text-center py-6 px-4 rounded-lg shadow-lg bg-white"
-        >
+        <figure class="max-w-screen-md mx-auto text-center py-6 px-4">
           <!-- Icon -->
           <svg
             class="w-6 h-6 mx-auto mb-4 text-gray-400 dark:text-gray-600"
@@ -35,15 +31,19 @@
             </p>
           </blockquote>
           <!-- Author and Location -->
-          <figcaption
-            class="flex flex-col items-center justify-center mt-6 space-y-2"
-          >
-            <cite class="font-medium text-primary">
-              {{ testimonial.name }}
-            </cite>
-            <cite class="text-sm text-secondary">
-              {{ testimonial.location }}
-            </cite>
+          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+            <div
+              class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700"
+            >
+              <div class="pr-3 font-medium text-gray-900 dark:text-white">
+                {{ testimonial.name }}
+              </div>
+              <div
+                class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400"
+              >
+                {{ testimonial.location }}
+              </div>
+            </div>
           </figcaption>
         </figure>
       </div>

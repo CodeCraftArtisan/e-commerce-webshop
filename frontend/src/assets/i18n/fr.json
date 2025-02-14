@@ -202,6 +202,53 @@
     "submitButton": "S'INSCRIRE"
   },
   "testimonials": {
-    "title": "Qu'en disent nos clients ?"
+    "title": "Qu'en disent nos clients ?",
+    "list": [
+      {
+        "name": "John Doe",
+        "location": "New York, NY",
+        "feedback": "Les matériaux de construction sont d'une qualité exceptionnelle ! La livraison a été rapide et l'équipe a été très professionnelle."
+      },
+      {
+        "name": "Jane Smith",
+        "location": "Los Angeles, CA",
+        "feedback": "J'ai acheté des outils de chantier et la qualité est au rendez-vous. Très satisfaite des produits, je recommande fortement !"
+      },
+      {
+        "name": "Sam Wilson",
+        "location": "Chicago, IL",
+        "feedback": "Excellente expérience avec la fourniture de matériaux de construction. Le service client est top et la livraison a été faite à temps. Un partenaire de confiance."
+      },
+      {
+        "name": "Sarah Lee",
+        "location": "San Francisco, CA",
+        "feedback": "Les équipements de construction que j'ai achetés sont parfaits pour mon chantier. Faciles à utiliser et très robustes. Merci pour la qualité !"
+      }
+    ]
+  },
+  "checkout": {
+    "order-summary": "Résumé de la commande",
+    "billing-delivery-info": "Informations de facturation et de livraison",
+    "shipping-address": "Adresse de livraison",
+    "edit": "Modifier",
+    "no-address": "Aucune adresse trouvée. Veuillez ajouter une adresse dans votre profil.",
+    "total": "Total",
+    "return-to-shopping": "Retour aux achats",
+    "place-order": "Passer la commande",
+    "success": {
+      "title": "Merci pour votre confiance !",
+      "message": "Votre commande est en cours de préparation et arrivera bientôt chez vous.",
+      "return-home": "Retour à l'accueil"
+    }
+  },
+  "cart": {
+    "title": "Panier",
+    "loading": "Chargement de votre panier...",
+    "remove": "Retirer",
+    "order-summary": "Résumé de la commande",
+    "total": "Total",
+    "proceed-to-checkout": "Passer à la caisse",
+    "empty": "Votre panier est vide.",
+    "back-to-shopping": "Retour aux achats"
   }
 }
