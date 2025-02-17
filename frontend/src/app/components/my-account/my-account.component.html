@@ -3,30 +3,28 @@
   (ngSubmit)="updateAddress()"
   class="px-4 mx-auto max-w-screen-xl mt-5 md:my-8"
 >
-  <h2 class="text-2xl font-bold mb-6 text-primary">Mon compte</h2>
-  <h2 class="text-xl font-semibold mb-6 text-green-darker">
-    Modifiez vos informations personnelles (champs facultatifs).
-  </h2>
+  <h2 class="text-2xl font-bold mb-6 text-primary">{{ 'account.title' | translate }}</h2>
+  <h2 class="text-xl font-semibold mb-6 text-green-darker">{{ 'account.subtitle' | translate }}</h2>
 
   <!-- NAME INFO -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
     <div>
-      <label for="firstname" class="block text-sm font-medium text-secondary mb-1">Nom</label>
+      <label for="firstname" class="block text-sm font-medium text-secondary mb-1">{{ 'account.firstname' | translate }}</label>
       <input
         id="firstname"
         type="text"
         formControlName="firstname"
-        placeholder="Doe"
+        placeholder="{{ 'account.firstname_placeholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
     </div>
     <div>
-      <label for="lastname" class="block text-sm font-medium text-secondary mb-1">Prénom</label>
+      <label for="lastname" class="block text-sm font-medium text-secondary mb-1">{{ 'account.lastname' | translate }}</label>
       <input
         id="lastname"
         type="text"
         formControlName="lastname"
-        placeholder="John"
+        placeholder="{{ 'account.lastname_placeholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
     </div>
@@ -34,7 +32,7 @@
 
   <!-- EMAIL FIELD (READ-ONLY) -->
   <div class="form-group mb-4">
-    <label for="email" class="block text-sm font-medium text-secondary mb-1">Email</label>
+    <label for="email" class="block text-sm font-medium text-secondary mb-1">{{ 'account.email' | translate }}</label>
     <input
       id="email"
       type="email"
@@ -44,26 +42,25 @@
     />
   </div>
 
-
   <!-- ADDRESS INFO -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
     <div class="md:col-span-2">
-      <label for="street" class="block text-sm font-medium text-secondary mb-1">Rue</label>
+      <label for="street" class="block text-sm font-medium text-secondary mb-1">{{ 'account.street' | translate }}</label>
       <input
         id="street"
         type="text"
         formControlName="street"
-        placeholder="Rue de la République"
+        placeholder="{{ 'account.street_placeholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
     </div>
     <div>
-      <label for="streetNumber" class="block text-sm font-medium text-secondary mb-1">Numéro</label>
+      <label for="streetNumber" class="block text-sm font-medium text-secondary mb-1">{{ 'account.street_number' | translate }}</label>
       <input
         id="streetNumber"
         type="text"
         formControlName="streetNumber"
-        placeholder="Numéro"
+        placeholder="{{ 'account.street_number_placeholder' | translate }}"
         class="form-control block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
       />
     </div>
@@ -71,7 +68,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5">
     <div>
-      <label for="postalCode" class="block text-sm font-medium text-secondary mb-1">Code Postal</label>
+      <label for="postalCode" class="block text-sm font-medium text-secondary mb-1">{{ 'account.postal_code' | translate }}</label>
       <input
         id="postalCode"
         type="text"
@@ -80,7 +77,7 @@
       />
     </div>
     <div>
-      <label for="city" class="block text-sm font-medium text-secondary mb-1">Ville</label>
+      <label for="city" class="block text-sm font-medium text-secondary mb-1">{{ 'account.city' | translate }}</label>
       <input
         id="city"
         type="text"
@@ -90,23 +87,23 @@
     </div>
     <!-- COUNTRY SELECT FIELD -->
     <div class="md:col-span-2">
-      <label for="country" class="block text-sm font-medium text-secondary mb-1">Pays</label>
+      <label for="country" class="block text-sm font-medium text-secondary mb-1">{{ 'account.country' | translate }}</label>
       <select
         id="country"
         formControlName="country"
         class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
       >
-        <option value="" disabled>Choisissez un pays...</option>
-        <option value="FR">France</option>
-        <option value="US">États-Unis</option>
-        <option value="DE">Allemagne</option>
-        <option value="JP">Japon</option>
+        <option value="" disabled>{{ 'account.country_placeholder' | translate }}</option>
+        <option value="FR">{{ 'account.country_fr' | translate }}</option>
+        <option value="US">{{ 'account.country_us' | translate }}</option>
+        <option value="DE">{{ 'account.country_de' | translate }}</option>
+        <option value="JP">{{ 'account.country_jp' | translate }}</option>
       </select>
     </div>
   </div>
 
   <!-- SUBMIT BUTTON -->
   <button type="submit" [disabled]="accountForm.invalid || isSubmitting" class="w-full md:max-w-sm cursor-pointer text-white bg-green-darker hover:bg-green font-semibold rounded-lg text-sm px-5 py-2.5">
-    {{ isSubmitting ? "Enregistrement..." : "Enregistrer les modifications" }}
+    {{ isSubmitting ? ('account.saving' | translate) : ('account.save' | translate) }}
   </button>
 </form>

@@ -4,7 +4,7 @@ import { CartService } from '../shop/services/cart.service';
 import { AuthService } from '../shop/services/auth.service';
 import { AddressService } from '../shop/services/address.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -23,7 +23,8 @@ export class CheckoutPageComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private authService: AuthService,
-    private addressService: AddressService
+    private addressService: AddressService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -68,6 +69,22 @@ export class CheckoutPageComponent implements OnInit {
         console.error('Failed to load the cart. Please try again.');
         this.isAddressLoading = false;
       },
+    });
+  }
+
+  onPlaceOrder(): void {
+    if (!this.userEmail) return;
+  
+    console.log("Clearing cart...");
+    
+    this.cartService.clearCart(this.userEmail).subscribe({
+      next: () => {
+        console.log("Cart cleared successfully");
+        this.router.navigate(['/checkout-success']);
+      },
+      error: (err) => {
+        console.error("Failed to clear cart:", err);
+      }
     });
   }
 }

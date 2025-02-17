@@ -28,13 +28,16 @@ export class CartService {
 
   // Remove an item from the cart
   removeItemFromCart(email: string, productId: string): Observable<Cart> {
+    console.log("Remove item from cart: " + productId)
     return this.http.delete<Cart>(
       API_ENDPOINTS.carts.removeItem(email, productId)
     );
   }
 
-  // Clear the entire cart for a user
   clearCart(email: string): Observable<void> {
-    return this.http.delete<void>(API_ENDPOINTS.carts.clearCart(email));
+    return this.http.delete<void>(
+      API_ENDPOINTS.carts.clearCart(email)
+    );
   }
+
 }

@@ -16,8 +16,8 @@ export const API_ENDPOINTS = {
     getByUserEmail: (email: string) => `${BASE_URL}/carts/${email}`,
     addItem: `${BASE_URL}/carts/items`,
     removeItem: (email: string, itemId: string) =>
-      `${BASE_URL}/carts/${email}/${itemId}`,
-    clearCart: (email: string) => `${BASE_URL}/carts/${email}`,
+      `${BASE_URL}/carts/${email}/items/${itemId}`,
+    clearCart: (email: string) => `${BASE_URL}/carts/${email}`, 
   },
   addresses: {
     getById: (id: string) => `${BASE_URL}/addresses/${id}`,
@@ -38,6 +38,7 @@ export const API_ENDPOINTS = {
     create: `${BASE_URL}/products`,
     update: (id: string) => `${BASE_URL}/products/${id}`,
     delete: (id: string) => `${BASE_URL}/products/${id}`,
+    getAllByCategory: (id: string) => `${BASE_URL}/products/category/${id}`
   },
   reviews: {
     getById: (id: string) => `${BASE_URL}/reviews/${id}`,
