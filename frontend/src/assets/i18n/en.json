@@ -250,5 +250,29 @@
     "proceed-to-checkout": "Proceed to Checkout",
     "empty": "Your cart is empty.",
     "back-to-shopping": "Back to Shopping"
+  },
+  "account": {
+    "title": "Edit Your Address",
+    "subtitle": "Please enter your information",
+    "firstname": "First Name",
+    "firstname_placeholder": "Enter your first name",
+    "lastname": "Last Name",
+    "lastname_placeholder": "Enter your last name",
+    "email": "Email",
+    "street": "Street",
+    "street_placeholder": "Enter your street",
+    "street_number": "Number",
+    "street_number_placeholder": "Enter your street number",
+    "postal_code": "Postal Code",
+    "city": "City",
+    "country": "Country",
+    "country_placeholder": "Select a country",
+    "country_fr": "France",
+    "country_us": "United States",
+    "country_de": "Germany",
+    "country_jp": "Japan",
+    "save": "Save",
+    "saving": "Saving..."
   }
+  
 }

@@ -250,5 +250,28 @@
     "proceed-to-checkout": "Ga naar de kassa",
     "empty": "Uw winkelwagen is leeg.",
     "back-to-shopping": "Terug naar winkelen"
-  }
+  },
+  "account": {
+    "title": "Adres wijzigen",
+    "subtitle": "Vul uw gegevens in",
+    "firstname": "Voornaam",
+    "firstname_placeholder": "Voer uw voornaam in",
+    "lastname": "Achternaam",
+    "lastname_placeholder": "Voer uw achternaam in",
+    "email": "E-mail",
+    "street": "Straat",
+    "street_placeholder": "Voer uw straat in",
+    "street_number": "Nummer",
+    "street_number_placeholder": "Voer uw huisnummer in",
+    "postal_code": "Postcode",
+    "city": "Stad",
+    "country": "Land",
+    "country_placeholder": "Selecteer een land",
+    "country_fr": "Frankrijk",
+    "country_us": "Verenigde Staten",
+    "country_de": "Duitsland",
+    "country_jp": "Japan",
+    "save": "Opslaan",
+    "saving": "Bezig met opslaan..."
+  }  
 }
