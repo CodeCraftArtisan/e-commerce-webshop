@@ -25,6 +25,7 @@ public class EntityMapper {
     }
 
     public ProductDTO convertProductToDTO(Product product) {
+        Category category = product.getCategory(); // Get the category once
         return new ProductDTO(
                 product.getId(),
                 product.getName(),
@@ -32,12 +33,13 @@ public class EntityMapper {
                 product.getDescription(),
                 product.getBrand(),
                 product.getStockQuantity(),
-                product.getCategory().getId(),
+                category != null ? category.getId() : null, // Check if category is null before accessing getId
                 product.getImageUrls(),
-                product.getCategory().getName(),
-                4.5 //Get the average rating and round it at 1 decimal, for now hardcoded at 4.5
+                category != null ? category.getName() : "Unknown", // Default to "Unknown" if category is null
+                4.5 // Get the average rating and round it at 1 decimal, for now hardcoded at 4.5
         );
     }
+
 
     public Product convertProductToEntity(ProductDTO productDTO) {
         Product product = new Product();

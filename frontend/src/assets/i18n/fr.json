@@ -250,5 +250,29 @@
     "proceed-to-checkout": "Passer à la caisse",
     "empty": "Votre panier est vide.",
     "back-to-shopping": "Retour aux achats"
+  },
+  "account": {
+    "title": "Modifier votre adresse",
+    "subtitle": "Veuillez renseigner vos informations",
+    "firstname": "Prénom",
+    "firstname_placeholder": "Entrez votre prénom",
+    "lastname": "Nom",
+    "lastname_placeholder": "Entrez votre nom",
+    "email": "Email",
+    "street": "Rue",
+    "street_placeholder": "Entrez votre rue",
+    "street_number": "Numéro",
+    "street_number_placeholder": "Entrez le numéro de rue",
+    "postal_code": "Code postal",
+    "city": "Ville",
+    "country": "Pays",
+    "country_placeholder": "Sélectionnez un pays",
+    "country_fr": "France",
+    "country_us": "États-Unis",
+    "country_de": "Allemagne",
+    "country_jp": "Japon",
+    "save": "Enregistrer",
+    "saving": "Enregistrement..."
   }
+  
 }
