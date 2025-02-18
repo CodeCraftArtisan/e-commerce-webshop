@@ -1,6 +1,6 @@
 // Base URLs for different environments
-const BASE_URL = 'http://localhost:8080/api';
-const PROD_BASE_URL = 'https://e-commerce-webshop-render.onrender.com/api/v1';
+const BASE_URL = 'https://e-commerce-webshop-render.onrender.com/api';
+const PROD_BASE_URL = 'http://localhost:8080/api';
 
 export const API_ENDPOINTS = {
   categories: {
