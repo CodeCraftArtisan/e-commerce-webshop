@@ -15,6 +15,7 @@ export const API_ENDPOINTS = {
   carts: {
     getByUserEmail: (email: string) => `${BASE_URL}/carts/${email}`,
     addItem: `${BASE_URL}/carts/items`,
+    modifyItem:  `${BASE_URL}/carts/modify/items`,
     removeItem: (email: string, itemId: string) =>
       `${BASE_URL}/carts/${email}/items/${itemId}`,
     clearCart: (email: string) => `${BASE_URL}/carts/${email}`, 

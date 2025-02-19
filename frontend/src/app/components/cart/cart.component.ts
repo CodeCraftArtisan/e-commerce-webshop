@@ -51,27 +51,11 @@ export class CartComponent implements OnInit {
     });
   }
 
-  // Update quantity of an item
-  updateQuantity(item: CartItems, newQuantity: number): void {
-    if (!this.userEmail || newQuantity <= 0) return;
-
-    this.cartService
-      .addItemToCart(this.userEmail, item.productId, newQuantity)
-      .subscribe({
-        next: () => {
-          this.loadCart();
-        },
-        error: (err) => {
-          console.error('Error updating quantity:', err);
-        },
-      });
-  }
-
   increaseQuantity(item: CartItems){
     if (!this.userEmail) return;
 
     this.cartService
-      .addItemToCart(this.userEmail, item.productId, item.quantity + 1)
+      .modifyCartItem(this.userEmail, item.productId, item.quantity + 1)
       .subscribe({
         next: () => {
           this.loadCart();
@@ -86,7 +70,7 @@ export class CartComponent implements OnInit {
     if (!this.userEmail) return;
 
     this.cartService
-      .addItemToCart(this.userEmail, item.productId, item.quantity - 1)
+      .modifyCartItem(this.userEmail, item.productId, item.quantity - 1)
       .subscribe({
         next: () => {
           this.loadCart();
@@ -96,12 +80,6 @@ export class CartComponent implements OnInit {
         },
       });
   }
-
-
-
-
-
-
 
   // Remove an item from the cart
   removeItem(item: CartItems): void {
