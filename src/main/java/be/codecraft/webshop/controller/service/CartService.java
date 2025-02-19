@@ -64,6 +64,23 @@ public class CartService {
     }
 
     @Transactional
+    public CartDTO modifyCartItem(String userEmail, UUID productId, int quantity) {
+        Cart cart = cartRepository.findByUserEmail(userEmail).orElseGet(() -> createCartForUser(userEmail));
+
+        CartItem cartItem = cart.getItems().stream()
+                .filter(item -> item.getProductId().equals(productId))
+                .findFirst()
+                .orElse(new CartItem());
+
+        cartItem.setQuantity(quantity);
+
+        calculateCartTotal(cart);
+        cartRepository.save(cart);
+
+        return entityMapper.convertCartToDTO(cart);
+    }
+
+    @Transactional
     public CartDTO removeItemFromCart(String userEmail, UUID productId) {
         Cart cart = cartRepository.findByUserEmail(userEmail)
                 .orElseThrow(() -> new IllegalArgumentException("Cart not found for user id: " + userEmail));

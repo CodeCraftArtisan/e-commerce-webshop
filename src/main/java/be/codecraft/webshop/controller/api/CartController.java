@@ -42,6 +42,17 @@ public class CartController {
         }
     }
 
+    @PostMapping("/modify/items")
+    public ResponseEntity<CartDTO> modifyCartItem(@RequestBody CartRequest newCartItem) {
+        try {
+            CartDTO updatedCartDTO = cartService.modifyCartItem(newCartItem.getEmail(), newCartItem.getProductId(), newCartItem.getQuantity());
+            return ResponseEntity.status(HttpStatus.CREATED).body(updatedCartDTO);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(null);
+        }
+    }
+
     @DeleteMapping("/{email}/items/{productId}")
     public ResponseEntity<CartDTO> removeItemFromCart(@PathVariable String email,
                                                       @PathVariable UUID productId) {
