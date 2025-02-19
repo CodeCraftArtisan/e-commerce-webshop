@@ -67,6 +67,42 @@ export class CartComponent implements OnInit {
       });
   }
 
+  increaseQuantity(item: CartItems){
+    if (!this.userEmail) return;
+
+    this.cartService
+      .addItemToCart(this.userEmail, item.productId, item.quantity + 1)
+      .subscribe({
+        next: () => {
+          this.loadCart();
+        },
+        error: (err) => {
+          console.error('Error updating quantity:', err);
+        },
+      });
+  }
+
+  decreaseQuantity(item: CartItems){
+    if (!this.userEmail) return;
+
+    this.cartService
+      .addItemToCart(this.userEmail, item.productId, item.quantity - 1)
+      .subscribe({
+        next: () => {
+          this.loadCart();
+        },
+        error: (err) => {
+          console.error('Error updating quantity:', err);
+        },
+      });
+  }
+
+
+
+
+
+
+
   // Remove an item from the cart
   removeItem(item: CartItems): void {
     if (!this.userEmail) return;

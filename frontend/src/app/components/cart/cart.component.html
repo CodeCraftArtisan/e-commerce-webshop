@@ -41,7 +41,7 @@
               >
                 <div class="flex items-center">
                   <button
-                    (click)="updateQuantity(item, item.quantity - 1)"
+                    (click)="decreaseQuantity(item)"
                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
                   >
                     <svg
@@ -59,15 +59,14 @@
                     </svg>
                   </button>
 
-                  <input
-                    type="text"
-                    class="w-10 text-center text-sm font-medium text-gray-900 dark:text-white"
-                    [value]="item.quantity"
-                    readonly
-                  />
+                  <span
+                  class="w-10 text-center text-sm font-medium text-gray-900 dark:text-white" >
+                  {{ item.quantity }}
+                  </span>
+                
 
                   <button
-                    (click)="updateQuantity(item, item.quantity + 1)"
+                    (click)="increaseQuantity(item)"
                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
                   >
                     <svg
