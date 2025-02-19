@@ -70,7 +70,7 @@ export class CartComponent implements OnInit {
     if (!this.userEmail) return;
 
     this.cartService
-      .addItemToCart(this.userEmail, item.productId, item.quantity - 1)
+      .modifyCartItem(this.userEmail, item.productId, item.quantity - 1)
       .subscribe({
         next: () => {
           this.loadCart();
@@ -80,12 +80,6 @@ export class CartComponent implements OnInit {
         },
       });
   }
-
-
-
-
-
-
 
   // Remove an item from the cart
   removeItem(item: CartItems): void {
