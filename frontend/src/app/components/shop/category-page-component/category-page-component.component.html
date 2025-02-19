@@ -34,25 +34,23 @@
       class="overflow-hidden transform transition-transform hover:-translate-y-1"
     >
       <a [routerLink]="['/product', product.id]" class="block pb-4">
-        <div class="">
-          <div class="bg-itemsBg">
-            <img
-              [src]="product.imageUrls[0]"
-              class="object-cover mx-auto rounded mb-3"
-              [alt]="product.name"
-            />
+        <div class="h-64 w-full bg-gray-100 relative">
+          <img
+            [src]="product.imageUrls[0]"
+            class="object-cover h-full w-full rounded mb-3"
+            [alt]="product.name"
+          />
+        </div>
+        <div class="card-body mt-3">
+          <div class="flex justify-between">
+            <h5 class="text-base font-medium text-primary mb-2">
+              {{ product.name }}
+            </h5>
+            <p class="text-xs text-btn">{{ product.brand }}</p>
           </div>
-          <div class="card-body">
-            <div class="flex justify-between">
-              <h5 class="text-base font-medium text-primary mb-2">
-                {{ product.name }}
-              </h5>
-              <p class="text-xs text-btn">{{ product.category[0] }}</p>
-            </div>
-            <p class="text-sm text-secondary">
-              {{ product.description }}
-            </p>
-          </div>
+          <p class="text-sm text-secondary">
+            {{ product.description }}
+          </p>
         </div>
       </a>
     </div>

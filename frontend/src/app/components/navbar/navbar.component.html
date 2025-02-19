@@ -3,13 +3,13 @@
   <div
     class="flex justify-end items-center mx-auto max-w-screen-xl px-4 h-full"
   >
-    <app-language-menu></app-language-menu>
+    <app-language-menu class="w-full"></app-language-menu>
   </div>
 </nav>
 
 <!-- Barre principale avec logo, menu mobile et user menu -->
 <nav
-  class="h-[15vh] sticky top-0 w-full z-40 transition-colors duration-300"
+  class="h-[11vh] sticky top-0 w-full z-40 transition-colors duration-300"
   [ngClass]="{
     'bg-scrolled hover:bg-initialColor': isScrolled,
     'bg-initialColor': !isScrolled
