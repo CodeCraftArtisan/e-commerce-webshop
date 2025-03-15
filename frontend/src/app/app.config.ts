@@ -69,6 +69,7 @@ export const appConfig: ApplicationConfig = {
         deps: [HttpClient],
       },
     }),
+    
 
     /* Ensure TranslateService is initialized before the app starts */
     {
