@@ -11,7 +11,6 @@ import { provideClientHydration } from '@angular/platform-browser';
 import {
   HttpClient,
   provideHttpClient,
-  withFetch,
   withInterceptors,
 } from '@angular/common/http';
 import {
@@ -34,9 +33,14 @@ export function initializeApp(envInjector: EnvironmentInjector) {
   return () =>
     runInInjectionContext(envInjector, () => {
       const translate = inject(TranslateService);
+
+      console.log('Initializing TranslateService...');
       translate.addLangs(['en', 'fr']);
       translate.setDefaultLang('fr');
-      return translate.use('fr').toPromise();
+
+      const result = translate.use('fr');
+
+      return result;
     });
 }
 
@@ -45,7 +49,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
 
-    provideHttpClient(withInterceptors([authInterceptor]), withFetch()),
+    provideHttpClient(withInterceptors([authInterceptor])),
 
     provideClientHydration(),
 
