@@ -35,7 +35,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "prerender": false,
             "ssr": {
               "entry": "server.ts"
             }
@@ -63,6 +63,27 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/",
+              "/about-us",
+              "/contact",
+              "/promo",
+              "/projects",
+              "/shop",
+              "/authenticate",
+              "/my-account",
+              "/cart",
+              "/categories",
+              "/checkout",
+              "/checkout-success"
+            ],
+          "guessRoutes": false,
+          "useRelativePaths": true
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -92,6 +113,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": ["src/styles.css"],

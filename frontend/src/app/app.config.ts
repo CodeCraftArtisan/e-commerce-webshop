@@ -22,10 +22,11 @@ import {
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { routes } from './app.routes';
 import { authInterceptor } from '../app/components/shop/services/auth.interceptor';
+import { UniversalTranslateLoader } from '../app/components/shop/services/universaltranslateloader.service'
 
 // Factory function for TranslateHttpLoader
-export function httpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+export function universalLoaderFactory(http: HttpClient) {
+  return new UniversalTranslateLoader(http, 'assets/i18n/', '.json');
 }
 
 // Initialization function for TranslateService
@@ -59,7 +60,7 @@ export const appConfig: ApplicationConfig = {
       defaultLanguage: 'fr',
       loader: {
         provide: TranslateLoader,
-        useFactory: httpLoaderFactory,
+        useFactory: universalLoaderFactory,
         deps: [HttpClient],
       },
     }),
