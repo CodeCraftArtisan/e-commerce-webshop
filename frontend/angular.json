@@ -81,7 +81,7 @@
               "/checkout",
               "/checkout-success"
             ],
-          "guessRoutes": false,
+          "guessRoutes": true,
           "useRelativePaths": true
           }
         },
