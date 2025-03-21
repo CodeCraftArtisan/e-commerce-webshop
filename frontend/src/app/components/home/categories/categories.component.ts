@@ -5,8 +5,6 @@ import { Product } from '../../types';
 import { CategoryService } from '../../shop/services/category.service'; // Importation du service
 import { Category } from '../../types'; // Assurez-vous d'importer le type Category
 
-// Import Swiper styles
-import 'swiper/swiper-bundle.css';
 import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../shop/services/auth.service';
 
