@@ -130,17 +130,6 @@
     },
     "conclusion": "Tous nos services sont réalisés selon des normes élevées de professionnalisme, avec un accent sur la qualité et des solutions personnalisées pour transformer les rêves de nos clients en projets concrets."
   },
-  "contact": {
-    "title": "Contactez-nous",
-    "name": "Nom",
-    "nameRequired": "Nom est requis.",
-    "email": "Email",
-    "emailRequired": "Un email valide est requis.",
-    "phone": "Téléphone",
-    "message": "Message",
-    "messageRequired": "Message est requis.",
-    "send": "Envoyer"
-  },
   "signIn": {
     "title": "Se connecter",
     "email": "Email",
@@ -273,6 +262,16 @@
     "country_jp": "Japon",
     "save": "Enregistrer",
     "saving": "Enregistrement..."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "email": {
+      "title": "Envoyez-nous un email :",
+      "description": "Envoyez-nous un email pour toute question générale, y compris les opportunités de marketing et de partenariat."
+    },
+    "call": {
+      "title": "Appelez-nous :",
+      "description": "Appelez-nous pour parler à un membre de notre équipe. Nous sommes toujours heureux de vous aider."
+    }
   }
-  
 }

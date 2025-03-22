@@ -130,17 +130,6 @@
     },
     "conclusion": "Al onze diensten worden uitgevoerd volgens hoge professionele normen, met een focus op kwaliteit en op maat gemaakte oplossingen om de dromen van onze klanten om te zetten in concrete projecten."
   },
-  "contact": {
-    "title": "Neem contact op",
-    "name": "Naam",
-    "nameRequired": "Naam is verplicht.",
-    "email": "E-mail",
-    "emailRequired": "Een geldig e-mailadres is verplicht.",
-    "phone": "Telefoon",
-    "message": "Bericht",
-    "messageRequired": "Bericht is verplicht.",
-    "send": "Verzenden"
-  },
   "signIn": {
     "title": "Inloggen",
     "email": "E-mail",
@@ -273,5 +262,16 @@
     "country_jp": "Japan",
     "save": "Opslaan",
     "saving": "Bezig met opslaan..."
-  }  
+  },
+  "contact": {
+    "title": "Contact",
+    "email": {
+      "title": "E-mail ons:",
+      "description": "Stuur ons een e-mail voor algemene vragen, inclusief marketing- en samenwerkingsmogelijkheden."
+    },
+    "call": {
+      "title": "Bel ons:",
+      "description": "Bel ons om met een lid van ons team te spreken. We helpen je graag."
+    }
+  }
 }
