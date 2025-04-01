@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+
 @Component({
   selector: 'checkout-page',
   imports: [CommonModule, RouterModule, TranslateModule],

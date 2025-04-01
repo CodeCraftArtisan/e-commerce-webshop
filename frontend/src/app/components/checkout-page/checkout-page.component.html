@@ -35,6 +35,7 @@
             </dl>
             <button
               type="button"
+              routerLink="/my-account"
               data-modal-target="billingInformationModal"
               data-modal-toggle="billingInformationModal"
               class="text-base font-medium text-primary-700 hover:underline dark:text-primary-500"
@@ -61,7 +62,7 @@
                 <td class="whitespace-nowrap py-4 md:w-[384px]">
                   <div class="flex items-center gap-4">
                     <a
-                      href="#"
+                    [routerLink]="['/product', item.productId]" 
                       class="flex items-center aspect-square w-16 h-16 shrink-0"
                     >
                       <img
@@ -71,7 +72,7 @@
                         class="h-auto w-full max-h-full dark:hidden"
                       />
                     </a>
-                    <a href="#" class="hover:underline">{{
+                    <a   [routerLink]="['/product', item.productId]" class="hover:underline">{{
                       item.productName
                     }}</a>
                   </div>
